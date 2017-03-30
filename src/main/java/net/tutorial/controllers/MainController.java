@@ -38,12 +38,10 @@ public class MainController extends HttpServlet {
 			if (param != null && id != null && param.equals("delete")) {
 				db.deleteRecord(Integer.parseInt(id));
 			}
-<<<<<<< Upstream, based on 144400927d5463a95869e39cd08857f817d08298
-			req.setAttribute("translations", db.allRecords());
-=======
+
 
 			req.setAttribute("translations", db.allRecords());
->>>>>>> 8a5f055 testtt
+
 		}
 		
 		if (param != null && param.equals("login")) {
