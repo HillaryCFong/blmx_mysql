@@ -11,6 +11,7 @@
 <body>
 	<h3>Address Book App (Using MySQL)</h3>
 	<a href="home?action=new">* New Contact</a>
+	<a href="home?action=login">* Log In</a>
 	<hr>
 	<table>
 		<thead>

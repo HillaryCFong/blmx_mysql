@@ -26,21 +26,23 @@ public class MainController extends HttpServlet {
 
 		if (param != null && param.equals("new")) {
 			viewName = "contact";
-		} else if (param != null && param.equals("edit")) {
-
+		}
+		else if (param != null && param.equals("edit")) {
 			viewName = "contact";
 			db = DBService.getInstance();
 			req.setAttribute("document", db.findRecord(Integer.parseInt(id)));
 
-		} else {
-
+		}
+		else {
 			db = DBService.getInstance();
-
 			if (param != null && id != null && param.equals("delete")) {
 				db.deleteRecord(Integer.parseInt(id));
 			}
-
 			req.setAttribute("contacts", db.allRecords());
+		}
+		
+		if (param != null && param.equals("login")) {
+			viewName = "login";
 		}
 
 		dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/" + viewName + ".jsp");
