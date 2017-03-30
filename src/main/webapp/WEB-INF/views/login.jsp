@@ -13,11 +13,11 @@
 		<ul class="fields">
 			<li>Username: <input name="username" type="email"
 				placeholder="Please enter your username." required
-				<c:if test="${!empty document}">value="${document.username}"</c:if>>
+				<c:if test="${!empty document}"><%-- value="${document.username}"--%></c:if>>
 			</li>
 			<li>Password: <input name="password" type="password"
 				placeholder="Please enter your password." required
-				<c:if test="${!empty document}">value="${document.password}"</c:if>>
+				<c:if test="${!empty document}"><%-- value="${document.password}"--%></c:if>>
 			</li>
 		</ul>
 
