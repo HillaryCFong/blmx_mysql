@@ -20,17 +20,25 @@
 		</c:if>
 		<ul class="fields">
 
-			<li>Name: <input name="name" type="text"
+			<li>Name: <input name="language" type="text"
 				placeholder="Please enter your name." required
-				<c:if test="${!empty document}">value="${document.name}"</c:if>>
+				<c:if test="${!empty document}">value="${document.language}"</c:if>>
 			</li>
-			<li>Email: <input name="email" type="email"
+			<li>Email: <input name="old" type="text"
 				placeholder="Please enter your email." required
-				<c:if test="${!empty document}">value="${document.email}"</c:if>>
+				<c:if test="${!empty document}">value="${document.old}"</c:if>>
 			</li>
-			<li>Mobile No.: <input name="mobile" type="text"
+			<li>Mobile No.: <input name="newt" type="text"
 				placeholder="Please enter your mobile no." required
-				<c:if test="${!empty document}">value="${document.mobile}"</c:if>>
+				<c:if test="${!empty document}">value="${document.newt}"</c:if>>
+			</li>
+			<li>Name: <input name="thumbsup" type="text"
+				placeholder="Please enter your name." required
+				<c:if test="${!empty document}">value="${document.thumbsup}"</c:if>>
+			</li>
+			<li>Name: <input name="thumbsdown" type="text"
+				placeholder="Please enter your name." required
+				<c:if test="${!empty document}">value="${document.thumbsdown}"</c:if>>
 			</li>
 		</ul>
 

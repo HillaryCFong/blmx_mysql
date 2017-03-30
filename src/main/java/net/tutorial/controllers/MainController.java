@@ -38,7 +38,12 @@ public class MainController extends HttpServlet {
 			if (param != null && id != null && param.equals("delete")) {
 				db.deleteRecord(Integer.parseInt(id));
 			}
+<<<<<<< Upstream, based on 144400927d5463a95869e39cd08857f817d08298
 			req.setAttribute("contacts", db.allRecords());
+=======
+
+			req.setAttribute("translations", db.allRecords());
+>>>>>>> 8a5f055 testtt
 		}
 		
 		if (param != null && param.equals("login")) {
@@ -52,16 +57,20 @@ public class MainController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String id = req.getParameter("id");
-		String name = req.getParameter("name");
-		String email = req.getParameter("email");
-		String mobile = req.getParameter("mobile");
+		String language = req.getParameter("language");
+		String old = req.getParameter("old");
+		String newt = req.getParameter("newt");
+		String thumbsup = req.getParameter("thumbsup");
+		String thumbsdown = req.getParameter("thumbsdown");
 
 		Map<String, Object> record = new HashMap<String, Object>();
 		DBService db = DBService.getInstance();
 
-		record.put("name", name);
-		record.put("email", email);
-		record.put("mobile", mobile);
+		record.put("language", language);
+		record.put("old", old);
+		record.put("newt", newt);
+		record.put("thumbsup", thumbsup);
+		record.put("thumbsdown", thumbsdown);
 
 		if (id == null) {
 			db.updateRecord(DBService.INSERT_RECORD, record);

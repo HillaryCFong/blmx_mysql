@@ -9,23 +9,32 @@
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+<<<<<<< Upstream, based on 144400927d5463a95869e39cd08857f817d08298
 	<h3>Address Book App (Using MySQL)</h3>
 	<a href="home?action=new">* New Contact</a>
 	<a href="home?action=login">* Log In</a>
+=======
+	<h3>Language Translation Database</h3>
+	<a href="home?action=new">* New Translation</a>
+>>>>>>> 8a5f055 testtt
 	<hr>
 	<table>
 		<thead>
-			<th>Name</th>
-			<th>Email</th>
-			<th>Mobile</th>
+			<th>Language</th>
+			<th>Old Text</th>
+			<th>New Text</th>
+			<th>Thumbs Up</th>
+			<th>Thumbs Down</th>
 			<th></th>
 		</thead>
 		<tbody>
-			<c:forEach items="${contacts}" var="contact">
+			<c:forEach items="${translations}" var="contact">
 				<tr>
-					<td><c:out value="${contact.name}" /></td>
-					<td><c:out value="${contact.email}" /></td>
-					<td><c:out value="${contact.mobile}" /></td>
+					<td><c:out value="${contact.language}" /></td>
+					<td><c:out value="${contact.old}" /></td>
+					<td><c:out value="${contact.newt}" /></td>
+					<td><c:out value="${contact.thumbsup}" /></td>
+					<td><c:out value="${contact.thumbsdown}" /></td>
 					<td>
 						<a href="home?action=edit&id=<c:out value="${contact._id}" />">Edit</a>
 						<a href="home?action=delete&id=<c:out value="${contact._id}" />">Delete</a>

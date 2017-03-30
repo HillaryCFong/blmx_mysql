@@ -32,7 +32,7 @@ public class DBService {
 
 		ArrayList<Map<String, Object>> records = new ArrayList<Map<String, Object>>();
 		Map<String, Object> record = null;
-		String sSQL = "SELECT _id, name, email, mobile " + "FROM `contacts`";
+		String sSQL = "SELECT _id, language, old, newt, thumbsup, thumbsdown " + "FROM `contacts`";
 
 		ResultSet rs = null;
 
@@ -43,9 +43,11 @@ public class DBService {
 			while (rs.next()) {
 				record = new HashMap<String, Object>();
 				record.put("_id", rs.getInt("_id"));
-				record.put("name", rs.getString("name"));
-				record.put("email", rs.getString("email"));
-				record.put("mobile", rs.getString("mobile"));
+				record.put("language", rs.getString("language"));
+				record.put("old", rs.getString("old"));
+				record.put("newt", rs.getString("newt"));
+				record.put("thumbsup", rs.getInt("thumbsup"));
+				record.put("thumbsdown", rs.getInt("thumbsdown"));
 				records.add(record);
 			}
 		} catch (SQLException e) {
@@ -98,9 +100,9 @@ public class DBService {
 	private void createTable() {
 		this.dbConnection = getConnection();
 
-		String createTableSQL = "CREATE TABLE IF NOT EXISTS `contacts` (" + "`_id` int(11) NOT NULL AUTO_INCREMENT,"
-				+ "`name` varchar(45) DEFAULT NULL," + "`email` varchar(45) DEFAULT NULL,"
-				+ "`mobile` varchar(45) DEFAULT NULL," + "PRIMARY KEY (`_id`)"
+		String createTableSQL = "CREATE TABLE IF NOT EXISTS `translations` (" + "`_id` int(11) NOT NULL AUTO_INCREMENT,"
+				+ "`language` varchar(45) DEFAULT NULL," + "`old` varchar(90) DEFAULT NULL,"
+				+ "`newt` varchar(90) DEFAULT NULL," + "`thumbsup` int(11) DEFAULT NULL," + "`thumbsdown` int(11) DEFAULT NULL," + "PRIMARY KEY (`_id`)"
 				+ ") ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 
 		try {
@@ -117,7 +119,7 @@ public class DBService {
 		this.dbConnection = getConnection();
 
 		try {
-			String sSQL = "DELETE FROM `contacts` WHERE _id=?";
+			String sSQL = "DELETE FROM `translations` WHERE _id=?";
 			ps = this.dbConnection.prepareStatement(sSQL);
 			ps.setInt(1, id);
 			ps.executeUpdate();
@@ -135,15 +137,17 @@ public class DBService {
 		ResultSet rs = null;
 
 		try {
-			String sSQL = "SELECT * FROM `contacts` WHERE _id=?";
+			String sSQL = "SELECT * FROM `translations` WHERE _id=?";
 			ps = this.dbConnection.prepareStatement(sSQL);
 			ps.setInt(1, id);
 			rs = ps.executeQuery();
 			if (rs.next()) {
 				record.put("_id", rs.getInt("_id"));
-				record.put("name", rs.getString("name"));
-				record.put("email", rs.getString("email"));
-				record.put("mobile", rs.getString("mobile"));
+				record.put("language", rs.getString("language"));
+				record.put("old", rs.getString("old"));
+				record.put("newt", rs.getString("newt"));
+				record.put("thumbsup", rs.getInt("thumbsup"));
+				record.put("thumbsdown", rs.getInt("thumbsdown"));
 			}
 
 			rs.close();
@@ -161,16 +165,18 @@ public class DBService {
 		String sSQL = null;
 
 		if (transaction == UPDATE_RECORD) {
-			sSQL = "UPDATE `contacts` " + "SET name = ? , email = ? , mobile = ? " + "WHERE _id = ?";
+			sSQL = "UPDATE `translations` " + "SET language = ? , old = ? , newt = ? , thumbsup = ? , thumbsdown = ? " + "WHERE _id = ?";
 		} else {
-			sSQL = "INSERT INTO `contacts`" + "(`name`, `email`, `mobile`) VALUES" + "(?,?,?)";
+			sSQL = "INSERT INTO `translations`" + "(`language`, `old`, `newt`, `thumbsup`, `thumbsdown`) VALUES" + "(?,?,?,?,?)";
 		}
 
 		try {
 			ps = this.dbConnection.prepareStatement(sSQL);
-			ps.setString(1, (String) record.get("name"));
-			ps.setString(2, (String) record.get("email"));
-			ps.setString(3, (String) record.get("mobile"));
+			ps.setString(1, (String) record.get("language"));
+			ps.setString(2, (String) record.get("old"));
+			ps.setString(3, (String) record.get("newt"));
+			ps.setString(4, (Int) record.get("thumbsup"));
+			ps.setString(5, (Int) record.get("thumbsdown"));
 			if (transaction == UPDATE_RECORD) {
 				ps.setInt(4, (int) record.get("_id"));
 			}
