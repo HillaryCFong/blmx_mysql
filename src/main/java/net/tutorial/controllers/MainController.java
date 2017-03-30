@@ -58,8 +58,8 @@ public class MainController extends HttpServlet {
 		String language = req.getParameter("language");
 		String old = req.getParameter("old");
 		String newt = req.getParameter("newt");
-		Int thumbsup = req.getParameter("thumbsup");
-		Int thumbsdown = req.getParameter("thumbsdown");
+		Integer thumbsup = req.getParameter("thumbsup");
+		Integer thumbsdown = req.getParameter("thumbsdown");
 
 		Map<String, Object> record = new HashMap<String, Object>();
 		DBService db = DBService.getInstance();
