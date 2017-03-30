@@ -176,8 +176,8 @@ public class DBService {
 			ps.setString(1, (String) record.get("language"));
 			ps.setString(2, (String) record.get("old"));
 			ps.setString(3, (String) record.get("newt"));
-			ps.setInt(4, (Int) record.get("thumbsup"));
-			ps.setInt(5, (Int) record.get("thumbsdown"));
+			ps.setInt(4, (int) record.get("thumbsup"));
+			ps.setInt(5, (int) record.get("thumbsdown"));
 			if (transaction == UPDATE_RECORD) {
 				ps.setInt(4, (int) record.get("_id"));
 			}
