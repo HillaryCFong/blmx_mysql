@@ -179,7 +179,7 @@ public class DBService {
 			ps.setInt(4, (int) record.get("thumbsup"));
 			ps.setInt(5, (int) record.get("thumbsdown"));
 			if (transaction == UPDATE_RECORD) {
-				ps.setInt(4, (int) record.get("_id"));
+				ps.setInt(6, (int) record.get("_id"));
 			}
 			ps.executeUpdate();
 		} catch (SQLException e) {

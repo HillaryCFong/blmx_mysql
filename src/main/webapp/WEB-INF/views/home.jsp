@@ -9,14 +9,11 @@
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<<<<<<< Upstream, based on 144400927d5463a95869e39cd08857f817d08298
-	<h3>Address Book App (Using MySQL)</h3>
+
+	<h3>Language Translation Database</h3>
 	<a href="home?action=new">* New Contact</a>
 	<a href="home?action=login">* Log In</a>
-=======
-	<h3>Language Translation Database</h3>
-	<a href="home?action=new">* New Translation</a>
->>>>>>> 8a5f055 testtt
+
 	<hr>
 	<table>
 		<thead>
