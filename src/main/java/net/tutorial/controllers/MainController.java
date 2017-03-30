@@ -39,7 +39,7 @@ public class MainController extends HttpServlet {
 				db.deleteRecord(Integer.parseInt(id));
 			}
 <<<<<<< Upstream, based on 144400927d5463a95869e39cd08857f817d08298
-			req.setAttribute("contacts", db.allRecords());
+			req.setAttribute("translations", db.allRecords());
 =======
 
 			req.setAttribute("translations", db.allRecords());
