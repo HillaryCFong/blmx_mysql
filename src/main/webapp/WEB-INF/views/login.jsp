@@ -11,15 +11,15 @@
 		<button type="submit">Save</button>
 		<a href="home">Cancel</a>
 		<ul class="fields">
-			<li>Username: <input name="email" type="email"
-				placeholder="Please enter your email." required
-				<c:if test="${!empty document}">value="${document.email}"</c:if>>
+			<li>Username: <input name="username" type="email"
+				placeholder="Please enter your username." required
+				<c:if test="${!empty document}">value="${document.username}"</c:if>>
 			</li>
-			<li>Password: <input name="mobile" type="text"
-				placeholder="Please enter your mobile no." required
-				<c:if test="${!empty document}">value="${document.mobile}"</c:if>>
+			<li>Password: <input name="password" type="password"
+				placeholder="Please enter your password." required
+				<c:if test="${!empty document}">value="${document.password}"</c:if>>
 			</li>
-		</ul>ul
+		</ul>
 
 </body>
 </html>
