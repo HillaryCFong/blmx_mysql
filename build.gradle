@@ -10,6 +10,8 @@ dependencies {
 	compile 'com.googlecode.json-simple:json-simple:1.1.1'
     compile 'org.apache.geronimo.specs:geronimo-servlet_3.0_spec:1.0'
     compile 'javax.servlet:jstl:1.2'
+    compile 'com.ibm.watson.developer_cloud:language-translator:3.6.0'
+    compile 'org.slf4j:slf4j-api:1.7.21'
 }
 
 check.dependsOn.remove(test) // Skip Testing
