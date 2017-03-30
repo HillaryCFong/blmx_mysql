@@ -32,7 +32,7 @@ public class DBService {
 
 		ArrayList<Map<String, Object>> records = new ArrayList<Map<String, Object>>();
 		Map<String, Object> record = null;
-		String sSQL = "SELECT _id, language, old, newt, thumbsup, thumbsdown " + "FROM `contacts`";
+		String sSQL = "SELECT _id, language, old, newt, thumbsup, thumbsdown " + "FROM `translations`";
 
 		ResultSet rs = null;
 
