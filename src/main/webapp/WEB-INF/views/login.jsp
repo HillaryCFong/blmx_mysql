@@ -5,6 +5,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Log In</title>
 
 	<!-- Bootstrap -->
 	<link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
@@ -13,9 +14,8 @@
 	<!-- Stylesheet -->
 	<link rel="stylesheet" type="text/css"  href="css/styles0.css">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300" rel="stylesheet" type="text/css">
-	
-	<title>Log In</title>
 </head>
+
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
   		<div class="container">
@@ -42,25 +42,25 @@
 	<div id="intro" class="text-center">
 		<div class="container">
     		<div class="section-title text-center center">
-				<h3>Log In</h3>
+				<h2>Log In</h2>
 				<hr>
 			</div>
 			<div class="space"></div>
-			<div class="col-md-6 col-md-offset-3">
-              	<ul class="fields">
-					<li>Username: <input name="username" type="email"
-							placeholder="Please enter your username." required
-							<c:if test="${!empty document}"> <%--value="${document.username}"--%></c:if>>
-						<p class="help-block text-danger"></p>
-					</li>
-					<li>Password: <input name="password" type="password"
-							placeholder="Please enter your password." required
-							<c:if test="${!empty document}"> <%--value="${document.password}"--%></c:if>>
-						<p class="help-block text-danger"></p>
-					</li>
-				</ul>
-				<button type="submit" class="btn btn-default">Save</button>
-            </div>
+			<form name="loginForm" id="loginForm">
+				<div class="col-md-6 col-md-offset-3">
+					<p>Username</p>
+					<input name="username" type="email"
+						placeholder="Please enter your username." class="form-control" required
+						<c:if test="${!empty document}"> <%--value="${document.username}"--%></c:if>>
+					<p class="help-block text-danger"></p>
+					<p>Password</p>
+					<input name="password" type="password"
+						placeholder="Please enter your password." class="form-control" required
+						<c:if test="${!empty document}"> <%--value="${document.password}"--%></c:if>>
+					<p class="help-block text-danger"></p>
+					<button type="submit" class="btn btn-default">Save</button>
+	            </div>
+	        </form>
 		</div>
 	</div>
 </body>
