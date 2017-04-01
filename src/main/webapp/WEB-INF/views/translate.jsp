@@ -49,7 +49,7 @@
     		<div class="row">
 				<div class="col-md-6">
 					<div class="service">
-						<form action="translate" method="POST">
+						<form action="trans" method="POST">
 							<p class="tr-selector">
 								<select name="tr-model-id" class="form-control">
 									<option value="en-ar">English - Arabic</option>
