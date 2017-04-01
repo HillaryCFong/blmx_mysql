@@ -47,6 +47,9 @@ public class MainController extends HttpServlet {
 		if (param != null && param.equals("login")) {
 			viewName = "login";
 		}
+		else if (param != null && param.equals("main")) {
+			viewName = "main";
+		}
 
 		dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/" + viewName + ".jsp");
 		dispatcher.forward(req, resp);
