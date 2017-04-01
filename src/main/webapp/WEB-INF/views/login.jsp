@@ -39,7 +39,7 @@
     		</div>
   		</div>
 	</nav>
-	<div id="intro" class="text-center">
+	<div id="services" class="text-center">
 		<div class="container">
     		<div class="section-title text-center center">
 				<h2>Log In</h2>
