@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import net.tutorial.utilities.DBService;
 
 @WebServlet("/translate")
-public class MainController extends HttpServlet {
+public class TranslateController extends HttpServlet {
 	RequestDispatcher dispatcher;
 	DBService db = null;
 
