@@ -45,7 +45,6 @@
 				<h2>Log In</h2>
 				<hr>
 			</div>
-			<div class="space"></div>
 			<form name="loginForm" id="loginForm">
 				<div class="col-md-6 col-md-offset-3">
 					<p>Username</p>
