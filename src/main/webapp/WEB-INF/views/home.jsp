@@ -13,7 +13,6 @@
 	<h3>Language Translation Database</h3>
 	<a href="home?action=new">* New Contact</a>
 	<a href="home?action=login">* Log In</a>
-	<a href="home?action=main">* Main</a>
 
 	<hr>
 	<table>
