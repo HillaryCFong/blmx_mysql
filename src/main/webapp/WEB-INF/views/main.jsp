@@ -84,7 +84,7 @@
     			</div>
     			<div class="col-md-6">
     				<div class="service">
-    					<hr><hr>
+    					<br><br>
     					<p class="panel">
 							<textarea class="form-control" name="tr-to" rows="10" readonly><c:if test="${!empty translation}">${translation}</c:if></textarea>
 						</p>

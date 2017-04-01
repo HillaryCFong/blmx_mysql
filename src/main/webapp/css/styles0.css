@@ -282,8 +282,9 @@ hr {
 	margin-top: 40px;
 }
 #services i.fa {
-	font-size: 36px;
-	color: #E75926;
+	font-size: 30px;
+	color: #FFFFFF;
+	/*color: #E75926;*/
 	transition: all 0.5s;
 }
 /* Gallery Section */
