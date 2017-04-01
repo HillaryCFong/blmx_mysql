@@ -73,10 +73,7 @@
 								</select>
 							</p>
 							<p class="panel">
-								<textarea name="tr-from" rows="10" class="form-control" placeholder="Message" required>
-									<c:if
-										test="${!empty text}">${text}</c:if>
-								</textarea>
+								<textarea name="tr-from" rows="10" class="form-control" placeholder="Message" required><c:if test="${!empty text}">${text}</c:if></textarea>
 								<p class="help-block text-danger"></p>
 							</p>
 							<p class="action">
@@ -87,11 +84,20 @@
     			</div>
     			<div class="col-md-6">
     				<div class="service">
-    					<div class="panel">
-							<textarea class="form-control" name="tr-to" rows="10" readonly>
-								<c:if
-									test="${!empty translation}">${translation}</c:if></textarea>
-						</div>
+    					<hr><hr>
+    					<p class="panel">
+							<textarea class="form-control" name="tr-to" rows="10" readonly><c:if test="${!empty translation}">${translation}</c:if></textarea>
+						</p>
+						<p class="action">
+							<button type="button" class="btn btn-default">
+								<i class="fa fa-thumbs-o-up"></i>
+								<span class="badge">0</span>
+							</button>
+							<button type="button" class="btn btn-default">
+								<i class="fa fa-thumbs-o-down"></i>
+								<span class="badge">0</span>
+							</button>
+						</p>
     				</div>
     			</div>
 			</div>
