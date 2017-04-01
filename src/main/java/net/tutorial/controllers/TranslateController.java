@@ -11,7 +11,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import net.tutorial.utilities.DBService;
+import net.tutorial.utilities.TranslatorService;
 
 @WebServlet("/translate")
 public class TranslateController extends HttpServlet {
