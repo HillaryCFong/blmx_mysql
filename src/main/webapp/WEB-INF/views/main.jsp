@@ -31,7 +31,8 @@
     		<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
       			<ul class="nav navbar-nav">
         			<li class="hidden"> <a href="#page-top"></a> </li>
-        			<li> <a href="">Log Out</a> </li>
+        			<li> <a href="login.jsp">Log In</a> </li>
+        			<li> <a href="">Sign Up</a> </li>
         			<!--
         			<li> <a class="page-scroll" href="#services">Convert</a> </li>
       				-->
@@ -39,7 +40,6 @@
     		</div>
   		</div>
 	</nav>
-<!--
 	<div id="intro">
   		<div class="intro-body">
     		<div class="container">
@@ -51,57 +51,6 @@
       			</div>
     		</div>
   		</div>
-	</div>
--->
-	<div id="services" class="text-center">
-		<div class="container">
-    		<div class="section-title text-center center">
-				<h2>Translate Text</h2>
-				<hr>
-    		</div>
-    		<div class="space"></div>
-    		<div class="row">
-				<div class="col-md-6">
-					<div class="service">
-						<form action="home" method="POST">
-							<p class="tr-selector">
-								<select name="tr-model-id" class="form-control">
-									<option value="en-ar">English - Arabic</option>
-									<option value="en-fr">English - French</option>
-									<option value="en-pt">English - Portuguese</option>
-									<option value="en-es">English - Spanish</option>
-								</select>
-							</p>
-							<p class="panel">
-								<textarea name="tr-from" rows="10" class="form-control" placeholder="Message" required><c:if test="${!empty text}">${text}</c:if></textarea>
-								<p class="help-block text-danger"></p>
-							</p>
-							<p class="action">
-								<input type="submit" value="Translate" class="btn btn-default">
-							</p>
-						</form>
-					</div>
-    			</div>
-    			<div class="col-md-6">
-    				<div class="service">
-    					<br><br>
-    					<p class="panel">
-							<textarea class="form-control" name="tr-to" rows="10" readonly><c:if test="${!empty translation}">${translation}</c:if></textarea>
-						</p>
-						<p class="action">
-							<button type="button" class="btn btn-default">
-								<i class="fa fa-thumbs-o-up"></i>
-								<span class="badge">0</span>
-							</button>
-							<button type="button" class="btn btn-default">
-								<i class="fa fa-thumbs-o-down"></i>
-								<span class="badge">0</span>
-							</button>
-						</p>
-    				</div>
-    			</div>
-			</div>
-		</div>
 	</div>
 </body>
 </html>
