@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import net.tutorial.utilities.DBService;
 
-@WebServlet({ "home", "" })
+@WebServlet("/home")
 public class MainController extends HttpServlet {
 	RequestDispatcher dispatcher;
 	DBService db = null;
