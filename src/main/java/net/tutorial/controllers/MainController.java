@@ -49,7 +49,7 @@ public class MainController extends HttpServlet {
 			}
 
 
-			req.setAttribute("translations", db.allRecords());
+			req.setAttribute("users", db.allRecords());
 
 		}
 
@@ -60,20 +60,20 @@ public class MainController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String id = req.getParameter("id");
-		String language = req.getParameter("language");
-		String old = req.getParameter("old");
-		String newt = req.getParameter("newt");
-		Integer thumbsup = Integer.parseInt(req.getParameter("thumbsup"));
-		Integer thumbsdown = Integer.parseInt(req.getParameter("thumbsdown"));
+		String name = req.getParameter("name");
+		String email = req.getParameter("email");
+		String password = req.getParameter("password");
+		Integer number = Integer.parseInt(req.getParameter("number"));
+		String gender = req.getParameter("gender"));
 
 		Map<String, Object> record = new HashMap<String, Object>();
 		DBService db = DBService.getInstance();
 
-		record.put("language", language);
-		record.put("old", old);
-		record.put("newt", newt);
-		record.put("thumbsup", thumbsup);
-		record.put("thumbsdown", thumbsdown);
+		record.put("name", name);
+		record.put("email", email);
+		record.put("password", password);
+		record.put("number", number);
+		record.put("gender", gender);
 
 		if (id == null) {
 			db.updateRecord(DBService.INSERT_RECORD, record);

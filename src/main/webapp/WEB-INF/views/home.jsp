@@ -27,7 +27,7 @@
 			<th></th>
 		</thead>
 		<tbody>
-			<c:forEach items="${translations}" var="contact">
+			<c:forEach items="${users}" var="contact">
 				<tr>
 					<td><c:out value="${contact.language}" /></td>
 					<td><c:out value="${contact.old}" /></td>
