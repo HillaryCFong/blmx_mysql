@@ -39,18 +39,18 @@ public class MainController extends HttpServlet {
 		}
 		else if (param != null && param.equals("edit")) {
 			viewName = "SIGNUP";
-			udb = UDBService.getInstance();
-			req.setAttribute("document", udb.findRecord(Integer.parseInt(id)));
+			db = DBService.getInstance();
+			req.setAttribute("document", db.findRecord(Integer.parseInt(id)));
 
 		}
 		else {
-			udb = UDBService.getInstance();
+			db = DBService.getInstance();
 			if (param != null && id != null && param.equals("delete")) {
 				udb.deleteRecord(Integer.parseInt(id));
 			}
 
 
-			req.setAttribute("users", db.allRecords());
+			req.setAttribute("translations", db.allRecords());
 
 		}
 
@@ -61,26 +61,26 @@ public class MainController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String id = req.getParameter("id");
-		String name = req.getParameter("name");
-		String email = req.getParameter("email");
-		String password = req.getParameter("password");
-		Integer number = Integer.parseInt(req.getParameter("number"));
-		String gender = req.getParameter("gender");
+		String language = req.getParameter("language");
+		String old = req.getParameter("old");
+		String newt = req.getParameter("newt");
+		Integer thumbsup = Integer.parseInt(req.getParameter("thumbsup"));
+		Integer thumbsdown = Integer.parseInt(req.getParameter("thumbsdown"));
 
 		Map<String, Object> record = new HashMap<String, Object>();
-		UDBService udb = UDBService.getInstance();
+		DBService db = DBService.getInstance();
 
-		record.put("name", name);
-		record.put("email", email);
-		record.put("password", password);
-		record.put("number", number);
-		record.put("gender", gender);
+		record.put("language", language);
+		record.put("old", old);
+		record.put("newt", newt);
+		record.put("thumbsup", thumbsup);
+		record.put("thumbsdown", thumbsdown);
 
 		if (id == null) {
-			udb.updateRecord(UDBService.INSERT_RECORD, record);
+			db.updateRecord(DBService.INSERT_RECORD, record);
 		} else {
 			record.put("_id", Integer.parseInt(id));
-			udb.updateRecord(UDBService.UPDATE_RECORD, record);
+			db.updateRecord(DBService.UPDATE_RECORD, record);
 		}
 		
 		

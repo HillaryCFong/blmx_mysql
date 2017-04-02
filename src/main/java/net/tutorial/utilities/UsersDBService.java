@@ -177,7 +177,7 @@ public class UDBService {
 			ps.setString(2, (String) record.get("email"));
 			ps.setString(3, (String) record.get("password"));
 			ps.setInt(4, (int) record.get("number"));
-			ps.setString(5, (String) record.get("gender"));
+			ps.setInt(5, (int) record.get("gender"));
 			if (transaction == UPDATE_RECORD) {
 				ps.setInt(7, (int) record.get("_id"));
 			}
