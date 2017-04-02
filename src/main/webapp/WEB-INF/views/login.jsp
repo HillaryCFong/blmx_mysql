@@ -24,7 +24,7 @@
       				<i class="fa fa-bars"></i>
       			</button>
       			<a class="navbar-brand page-scroll" href="#page-top"> 
-      				<a href = "home"><i class="fa fa-paper-plane-o"></i> Translator</a>
+      				<!--<a href = "home">--><i class="fa fa-paper-plane-o"></i> Translator<!--</a>-->
       			</a>
       		</div>
     
