@@ -91,13 +91,12 @@ public class AccountManager {
 	public Boolean checkAccount(Account a){
 		String sql = "SELECT * FROM users;";
 		Connection conn = DBService.getConnection();
-		FileOutputStream logs;
+		// FileOutputStream logs;
 	//	String timeStamp = new SimpleDateFormat("yyyy/MM/dd_HH:mm:ss").format(Calendar.getInstance().getTime());
 		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			ResultSet rs = pstmt.executeQuery(sql);
-			logs = new FileOutputStream("/Users/francodavid/Documents/workspace/Foobar Bookshop/Logs.text", true);
 			
 			while(rs.next()){
 				if(a.getUsername().equals(rs.getString("username"))){
@@ -127,8 +126,8 @@ public class AccountManager {
 						return true;
 						} 
 						
-						pstmtAttempt.executeUpdate();
-						pstmtAttempt.close();
+				//		pstmtAttempt.executeUpdate();
+				//		pstmtAttempt.close();
 					} else{
 					// logs.write("Locked Account.".getBytes());
 					return false;
