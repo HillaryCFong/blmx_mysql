@@ -1,4 +1,5 @@
 package net.tutorial.controllers;
+package net.tutorial.utilities;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -15,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 import net.tutorial.utilities.DBService;
 import net.tutorial.utilities.TranslatorService;
 
-import net.tutorial.utilities.Account;
-import net.tutorial.utilities.AccountManager;
+//import net.tutorial.utilities.Account;
+./import net.tutorial.utilities.AccountManager;
 
 @WebServlet("/login")
 public class LogIn extends HttpServlet {
