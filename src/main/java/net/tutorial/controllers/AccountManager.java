@@ -8,8 +8,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-import src.main.java.net.tutorial.controllers.Account;
-import src.main.java.net.tutorial.utilities.DBService;
+import net.tutorial.controllers.Account;
+import net.tutorial.utilities.DBService;
 
 public class AccountManager {
 	public AccountManager() {}
@@ -86,7 +86,7 @@ public class AccountManager {
 		}
 	}
 	*/
-	public String checkAccount(Account a){
+	public Boolean checkAccount(Account a){
 		String sql = "SELECT * FROM users;";
 		String role = null;
 		Connection conn = DBService.getConnection();

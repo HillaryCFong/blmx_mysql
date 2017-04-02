@@ -15,11 +15,11 @@ import javax.servlet.http.HttpServletResponse;
 import net.tutorial.utilities.DBService;
 import net.tutorial.utilities.TranslatorService;
 
-import src.main.java.net.tutorial.controllers.Account;
-import src.main.java.net.tutorial.controllers.AccountManager;
+import net.tutorial.controllers.Account;
+import net.tutorial.controllers.AccountManager;
 
 @WebServlet("/login")
-public class Login extends HttpServlet {
+public class LogIn extends HttpServlet {
 	RequestDispatcher dispatcher;
 	DBService db = null;
 
