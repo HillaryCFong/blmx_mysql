@@ -11,37 +11,12 @@
 <body>
 
 	<h3>Language Translation Database</h3>
-	<a href="home?action=new">* Sign Up/Add Account</a>
-	<a href="home?action=login">* Log In</a>
-	<a href="home?action=translate">* Translate</a>
+	<a href="home?action=new">* Sign Up/Add Account</a><br>
+	<a href="home?action=login">* Log In</a><br>
+	<a href="home?action=translate">* Translate</a><br>
 	<a href="home?action=main">* Main</a>
 	
 	<hr>
-	<table>
-		<thead>
-			<th>Language:</th>
-			<th>Old Text:</th>
-			<th>New Text:</th>
-			<th>Thumbs Up:</th>
-			<th>Thumbs Down:</th>
-			<th></th>
-		</thead>
-		<tbody>
-			<c:forEach items="${translations}" var="contact">
-				<tr>
-					<td><c:out value="${contact.language}" /></td>
-					<td><c:out value="${contact.old}" /></td>
-					<td><c:out value="${contact.newt}" /></td>
-					<td><c:out value="${contact.thumbsup}" /></td>
-					<td><c:out value="${contact.thumbsdown}" /></td>
-					<td>
-						<a href="home?action=edit&id=<c:out value="${contact._id}" />">Edit</a>
-						<a href="home?action=delete&id=<c:out value="${contact._id}" />">Delete</a>
-					</td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
 	
 	<table>
 		<thead>
