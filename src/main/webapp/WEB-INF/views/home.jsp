@@ -11,7 +11,7 @@
 <body>
 
 	<h3>Language Translation Database</h3>
-	<a href="home?action=new">* Sign Up/Add Account</a>
+	<a href="home?action=new">* New Contact</a>
 	<a href="home?action=login">* Log In</a>
 	<a href="home?action=translate">* Translate</a>
 	<a href="home?action=main">* Main</a>
@@ -19,11 +19,11 @@
 	<hr>
 	<table>
 		<thead>
-			<th>Language:</th>
-			<th>Old Text:</th>
-			<th>New Text:</th>
-			<th>Thumbs Up:</th>
-			<th>Thumbs Down:</th>
+			<th>Language</th>
+			<th>Old Text</th>
+			<th>New Text</th>
+			<th>Thumbs Up</th>
+			<th>Thumbs Down</th>
 			<th></th>
 		</thead>
 		<tbody>
@@ -42,32 +42,5 @@
 			</c:forEach>
 		</tbody>
 	</table>
-	
-	<table>
-		<thead>
-			<th>Full Name:</th>
-			<th>Email:</th>
-			<th>Password:</th>
-			<th>Number:</th>
-			<th>Gender:</th>
-			<th></th>
-		</thead>
-		<tbody>
-			<c:forEach items="${users}" var="contact">
-				<tr>
-					<td><c:out value="${contact.name}" /></td>
-					<td><c:out value="${contact.email}" /></td>
-					<td><c:out value="${contact.password}" /></td>
-					<td><c:out value="${contact.number}" /></td>
-					<td><c:out value="${contact.gender}" /></td>
-					<td>
-						<a href="home?action=uedit&id=<c:out value="${contact._id}" />">Edit</a>
-						<a href="home?action=udelete&id=<c:out value="${contact._id}" />">Delete</a>
-					</td>
-				</tr>
-			</c:forEach>
-		</tbody>
-	</table>
-	
 </body>
 </html>

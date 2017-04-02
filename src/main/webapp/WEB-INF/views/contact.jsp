@@ -20,27 +20,26 @@
 		</c:if>
 		<ul class="fields">
 
-			<li>Full Name: <input name="name" type="text"
+			<li>Language: <input name="language" type="text"
 				placeholder="Please enter your name." required
-				<c:if test="${!empty document}">value="${document.name}"</c:if>>
+				<c:if test="${!empty document}">value="${document.language}"</c:if>>
 			</li>
-			<li>Email Address: <input name="email" type="text"
-				placeholder="Please enter your email address." required
-				<c:if test="${!empty document}">value="${document.email}"</c:if>>
+			<li>Old Text: <input name="old" type="text"
+				placeholder="Please enter your email." required
+				<c:if test="${!empty document}">value="${document.old}"</c:if>>
 			</li>
-			<li>Password Text: <input name="password" type="password"
-				placeholder="Please enter your password." required
-				<c:if test="${!empty document}">value="${document.password}"</c:if>>
+			<li>New Text: <input name="newt" type="text"
+				placeholder="Please enter your mobile no." required
+				<c:if test="${!empty document}">value="${document.newt}"</c:if>>
 			</li>
-			<li>Cellphone Number: <input name="number" type="number"
-				placeholder="Please enter your number." required
-				<c:if test="${!empty document}">value="${document.number}"</c:if>>
+			<li>ThumbsUp: <input name="thumbsup" type="number"
+				placeholder="Please enter your name." required
+				<c:if test="${!empty document}">value="${document.thumbsup}"</c:if>>
 			</li>
-			<li>Gender: <input name="gender" type="number"
-				placeholder="Please enter your gender." required
-				<c:if test="${!empty document}">value="${document.gender}"</c:if>>
+			<li>ThumbsDown: <input name="thumbsdown" type="number"
+				placeholder="Please enter your name." required
+				<c:if test="${!empty document}">value="${document.thumbsdown}"</c:if>>
 			</li>
-			
 		</ul>
 
 	</form>
