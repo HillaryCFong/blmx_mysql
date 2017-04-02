@@ -72,7 +72,7 @@ public class DBService {
 		}
 	}
 
-	private Connection getConnection() {
+	public Connection getConnection() {
 		Connection dbConnection = null;
 
 		try {
