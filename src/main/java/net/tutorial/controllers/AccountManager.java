@@ -133,10 +133,11 @@ public class AccountManager {
 					// logs.write("Locked Account.".getBytes());
 					return false;
 					}
-			//	}
-			}
+			//	} 
 			
 			else return false;
+			}
+			
 			
 			logs.close();
 			rs.close();
