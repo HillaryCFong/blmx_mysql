@@ -15,8 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import net.tutorial.utilities.DBService;
 import net.tutorial.utilities.TranslatorService;
 
-import AccountManager;
-import Account;
+import src.main.java.net.tutorial.controllers.Account;
+import src.main.java.net.tutorial.controllers.AccountManager;
 
 @WebServlet("/login")
 public class Login extends HttpServlet {

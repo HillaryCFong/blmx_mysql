@@ -8,8 +8,8 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-import Account;
-import utilities.DBService;
+import src.main.java.net.tutorial.controllers.Account;
+import src.main.java.net.tutorial.utilities.DBService;
 
 public class AccountManager {
 	public AccountManager() {}
