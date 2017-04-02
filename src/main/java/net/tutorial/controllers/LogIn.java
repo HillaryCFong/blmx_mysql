@@ -38,7 +38,7 @@ public class LogIn extends HttpServlet {
 				AccountManager accountManager = new AccountManager();
 		        String username = req.getParameter("username");
 				String password = req.getParameter("password");
-				account = new Account();
+				Account account = new Account();
 				account.setUsername(username);
 				account.setPassword(password);
 				
