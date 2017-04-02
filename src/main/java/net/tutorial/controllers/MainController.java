@@ -17,6 +17,7 @@ import net.tutorial.utilities.DBService;
 public class MainController extends HttpServlet {
 	RequestDispatcher dispatcher;
 	DBService db = null;
+	UDBService udb = null;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -25,7 +26,7 @@ public class MainController extends HttpServlet {
 		String viewName = "home";
 
 		if (param != null && param.equals("new")) {
-			viewName = "contact";
+			viewName = "SIGNUP";
 		}
 		else if (param != null && param.equals("login")) {
 			viewName = "login";
@@ -37,7 +38,7 @@ public class MainController extends HttpServlet {
 			viewName = "main";
 		}
 		else if (param != null && param.equals("edit")) {
-			viewName = "contact";
+			viewName = "SIGNUP";
 			db = DBService.getInstance();
 			req.setAttribute("document", db.findRecord(Integer.parseInt(id)));
 
@@ -45,7 +46,7 @@ public class MainController extends HttpServlet {
 		else {
 			db = DBService.getInstance();
 			if (param != null && id != null && param.equals("delete")) {
-				db.deleteRecord(Integer.parseInt(id));
+				udb.deleteRecord(Integer.parseInt(id));
 			}
 
 
@@ -81,6 +82,10 @@ public class MainController extends HttpServlet {
 			record.put("_id", Integer.parseInt(id));
 			db.updateRecord(DBService.UPDATE_RECORD, record);
 		}
+		
+		
+		
+		
 
 		resp.sendRedirect("home");
 	}

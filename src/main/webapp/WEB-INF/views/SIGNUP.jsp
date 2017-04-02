@@ -20,26 +20,27 @@
 		</c:if>
 		<ul class="fields">
 
-			<li>Language: <input name="language" type="text"
+			<li>Full Name: <input name="name" type="text"
 				placeholder="Please enter your name." required
-				<c:if test="${!empty document}">value="${document.language}"</c:if>>
+				<c:if test="${!empty document}">value="${document.name}"</c:if>>
 			</li>
-			<li>Old Text: <input name="old" type="text"
-				placeholder="Please enter your email." required
-				<c:if test="${!empty document}">value="${document.old}"</c:if>>
+			<li>Email Address: <input name="email" type="text"
+				placeholder="Please enter your email address." required
+				<c:if test="${!empty document}">value="${document.email}"</c:if>>
 			</li>
-			<li>New Text: <input name="newt" type="text"
-				placeholder="Please enter your mobile no." required
-				<c:if test="${!empty document}">value="${document.newt}"</c:if>>
+			<li>Password Text: <input name="password" type="password"
+				placeholder="Please enter your password." required
+				<c:if test="${!empty document}">value="${document.password}"</c:if>>
 			</li>
-			<li>ThumbsUp: <input name="thumbsup" type="number"
-				placeholder="Please enter your name." required
-				<c:if test="${!empty document}">value="${document.thumbsup}"</c:if>>
+			<li>Cellphone Number: <input name="number" type="number"
+				placeholder="Please enter your number." required
+				<c:if test="${!empty document}">value="${document.number}"</c:if>>
 			</li>
-			<li>ThumbsDown: <input name="thumbsdown" type="number"
-				placeholder="Please enter your name." required
-				<c:if test="${!empty document}">value="${document.thumbsdown}"</c:if>>
+			<li>Gender: <input name="gender" type="number"
+				placeholder="Please enter your gender." required
+				<c:if test="${!empty document}">value="${document.gender}"</c:if>>
 			</li>
+			
 		</ul>
 
 	</form>
