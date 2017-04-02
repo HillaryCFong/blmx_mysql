@@ -144,7 +144,7 @@ public class AccountManager {
 			e.printStackTrace();
 		}
 		
-		// return role;
+		return false;
 	}
 	
 /*
