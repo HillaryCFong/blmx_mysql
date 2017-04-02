@@ -2,7 +2,7 @@ package net.tutorial.utilities;
 
 
 public class Account {
-	private String username;
+	private String email;
 	private String password;
 	private String name;
 	private int number;
@@ -13,22 +13,22 @@ public class Account {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Account(String username, String password, String name,
+	public Account(String email, String password, String name,
 			int number, String gender) {
 		super();
-		this.username = username;
+		this.email = email;
 		this.password = password;
 		this.name = name;
 		this.number = number;
 		this.gender = gender;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getPassword() {

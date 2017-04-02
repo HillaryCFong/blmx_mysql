@@ -17,13 +17,13 @@ public class AccountManager {
 	public AccountManager() {}
 	
 /*	public void addAccount(Account a){
-		String sql = "INSERT INTO Account (username, password, role, loginAttempt, question)"
+		String sql = "INSERT INTO Account (email, password, role, loginAttempt, question)"
 				+ "VALUES (?,?,?,?,?);";
 		Connection conn = DBService.getConnection();
 		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, a.getUsername());
+			pstmt.setString(1, a.getemail());
 			pstmt.setString(2, a.getPassword());
 			pstmt.setString(3, a.getRole());
 			pstmt.setInt(4, a.getLoginAttempt());
@@ -50,17 +50,17 @@ public class AccountManager {
 			logs = new FileOutputStream("/Users/francodavid/Documents/workspace/Foobar Bookshop/Logs.text", true);
 			
 			while(rs.next()){
-				if(a.getUsername().equals(rs.getString("username"))){
-					String sqlAttempt = "UPDATE Account SET password = ? WHERE username = ?;";
+				if(a.getemail().equals(rs.getString("email"))){
+					String sqlAttempt = "UPDATE Account SET password = ? WHERE email = ?;";
 					PreparedStatement pstmtAttempt = conn.prepareStatement(sqlAttempt);
-					pstmtAttempt.setString(2, a.getUsername());
+					pstmtAttempt.setString(2, a.getemail());
 					
 					logs.write("\n".getBytes());
 					logs.write(timeStamp.getBytes());
 					logs.write(" - ".getBytes());
 					logs.write(rs.getString("role").getBytes());
 					logs.write(" - ".getBytes());
-					logs.write(rs.getString("username").getBytes());
+					logs.write(rs.getString("email").getBytes());
 					logs.write(" : ".getBytes());
 					
 					if(password.equals("Forgot")){
@@ -99,21 +99,21 @@ public class AccountManager {
 			ResultSet rs = pstmt.executeQuery(sql);
 			
 			while(rs.next()){
-				if(a.getUsername().equals(rs.getString("username"))){
+				if(a.getemail().equals(rs.getString("email"))){
 					
 				/*	logs.write("\n".getBytes());
 					logs.write(timeStamp.getBytes());
 					logs.write(" - ".getBytes());
 					logs.write(rs.getString("role").getBytes());
 					logs.write(" - ".getBytes());
-					logs.write(rs.getString("username").getBytes());
+					logs.write(rs.getString("email").getBytes());
 					logs.write(" : ".getBytes());
 					
 					if(rs.getInt("loginAttempt") % 10 == 0 || rs.getInt("loginAttempt") % 5 != 0){
-						String sqlAttempt = "UPDATE Account SET loginAttempt = ? WHERE username = ?;";
+						String sqlAttempt = "UPDATE Account SET loginAttempt = ? WHERE email = ?;";
 						PreparedStatement pstmtAttempt = conn.prepareStatement(sqlAttempt);
 						pstmtAttempt.setInt(1, 0);
-						pstmtAttempt.setString(2, a.getUsername());
+						pstmtAttempt.setString(2, a.getemail());
 					*/	
 						if(a.getPassword().equals(rs.getString("password"))){
 						//	if(rs.getInt("loginAttempt") >= 10){
@@ -148,7 +148,7 @@ public class AccountManager {
 	}
 	
 /*
-	public boolean forgotPassword(String username, String question){
+	public boolean forgotPassword(String email, String question){
 		String sql = "SELECT * FROM Account;";
 		boolean valid = false;
 		Connection conn = DBService.getConnection();
@@ -158,7 +158,7 @@ public class AccountManager {
 			ResultSet rs = pstmt.executeQuery(sql);
 			
 			while(rs.next()){
-				if(username.equals(rs.getString("username")) && question.equals(rs.getString("question"))){
+				if(email.equals(rs.getString("email")) && question.equals(rs.getString("question"))){
 					valid = true;
 				}
 			}
