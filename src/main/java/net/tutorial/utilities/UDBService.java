@@ -14,11 +14,11 @@ public class UDBService {
 	public static final int INSERT_RECORD = 1;
 	public static final int UPDATE_RECORD = 2;
 
-	private static DBService instance = new DBService();
+	private static UDBService instance = new UDBService();
 	Connection dbConnection = null;
 	private PreparedStatement ps = null;
 
-	private DBService() {
+	private UDBService() {
 		createTable();
 	}
 
