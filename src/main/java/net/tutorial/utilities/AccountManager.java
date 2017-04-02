@@ -23,7 +23,7 @@ public class AccountManager {
 		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, a.getemail());
+			pstmt.setString(1, a.getEmail());
 			pstmt.setString(2, a.getPassword());
 			pstmt.setString(3, a.getRole());
 			pstmt.setInt(4, a.getLoginAttempt());
@@ -50,10 +50,10 @@ public class AccountManager {
 			logs = new FileOutputStream("/Users/francodavid/Documents/workspace/Foobar Bookshop/Logs.text", true);
 			
 			while(rs.next()){
-				if(a.getemail().equals(rs.getString("email"))){
+				if(a.getEmail().equals(rs.getString("email"))){
 					String sqlAttempt = "UPDATE Account SET password = ? WHERE email = ?;";
 					PreparedStatement pstmtAttempt = conn.prepareStatement(sqlAttempt);
-					pstmtAttempt.setString(2, a.getemail());
+					pstmtAttempt.setString(2, a.getEmail());
 					
 					logs.write("\n".getBytes());
 					logs.write(timeStamp.getBytes());
@@ -99,7 +99,7 @@ public class AccountManager {
 			ResultSet rs = pstmt.executeQuery(sql);
 			
 			while(rs.next()){
-				if(a.getemail().equals(rs.getString("email"))){
+				if(a.getEmail().equals(rs.getString("email"))){
 					
 				/*	logs.write("\n".getBytes());
 					logs.write(timeStamp.getBytes());
@@ -113,7 +113,7 @@ public class AccountManager {
 						String sqlAttempt = "UPDATE Account SET loginAttempt = ? WHERE email = ?;";
 						PreparedStatement pstmtAttempt = conn.prepareStatement(sqlAttempt);
 						pstmtAttempt.setInt(1, 0);
-						pstmtAttempt.setString(2, a.getemail());
+						pstmtAttempt.setString(2, a.getEmail());
 					*/	
 						if(a.getPassword().equals(rs.getString("password"))){
 						//	if(rs.getInt("loginAttempt") >= 10){
