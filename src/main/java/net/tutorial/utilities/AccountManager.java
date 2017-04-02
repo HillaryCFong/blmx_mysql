@@ -90,7 +90,6 @@ public class AccountManager {
 	*/
 	public Boolean checkAccount(Account a){
 		String sql = "SELECT * FROM users;";
-		String role = null;
 		Connection conn = DBService.getConnection();
 		FileOutputStream logs;
 	//	String timeStamp = new SimpleDateFormat("yyyy/MM/dd_HH:mm:ss").format(Calendar.getInstance().getTime());
@@ -138,8 +137,6 @@ public class AccountManager {
 			
 			}
 			
-			
-			logs.close();
 			rs.close();
 			pstmt.close();
 			conn.close();
