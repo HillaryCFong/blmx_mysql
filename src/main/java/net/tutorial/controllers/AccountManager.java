@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-import net.tutorial.controllers.Account;
+import net.tutorial.utilities.Account;
 import net.tutorial.utilities.DBService;
 
 public class AccountManager {
