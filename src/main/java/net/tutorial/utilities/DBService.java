@@ -102,7 +102,7 @@ public class DBService {
 
 		String createTableSQL = "CREATE TABLE IF NOT EXISTS `users` (" + "`_id` int(11) NOT NULL AUTO_INCREMENT,"
 				+ "`name` varchar(45) DEFAULT NULL," + "`email` varchar(90) DEFAULT NULL,"
-				+ "`newt` password(90) DEFAULT NULL," + "`number` int(90) DEFAULT NULL," + "`gender` varchar(90) DEFAULT NULL," + "PRIMARY KEY (`_id`)"
+				+ "`password` varchar(90) DEFAULT NULL," + "`number` int(90) DEFAULT NULL," + "`gender` varchar(90) DEFAULT NULL," + "PRIMARY KEY (`_id`)"
 				+ ") ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 
 		try {
