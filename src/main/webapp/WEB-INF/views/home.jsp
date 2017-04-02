@@ -19,21 +19,21 @@
 	<hr>
 	<table>
 		<thead>
-			<th>Language</th>
-			<th>Old Text</th>
-			<th>New Text</th>
-			<th>Thumbs Up</th>
-			<th>Thumbs Down</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Password</th>
+			<th>Number</th>
+			<th>Gender</th>
 			<th></th>
 		</thead>
 		<tbody>
 			<c:forEach items="${users}" var="contact">
 				<tr>
-					<td><c:out value="${contact.language}" /></td>
-					<td><c:out value="${contact.old}" /></td>
-					<td><c:out value="${contact.newt}" /></td>
-					<td><c:out value="${contact.thumbsup}" /></td>
-					<td><c:out value="${contact.thumbsdown}" /></td>
+					<td><c:out value="${contact.name}" /></td>
+					<td><c:out value="${contact.email}" /></td>
+					<td><c:out value="${contact.password}" /></td>
+					<td><c:out value="${contact.number}" /></td>
+					<td><c:out value="${contact.gender}" /></td>
 					<td>
 						<a href="home?action=edit&id=<c:out value="${contact._id}" />">Edit</a>
 						<a href="home?action=delete&id=<c:out value="${contact._id}" />">Delete</a>
