@@ -45,7 +45,7 @@ public class LogIn extends HttpServlet {
 			
 				if(accountManager.checkAccount(account))
 				{
-					alert("fdfd");
+					console.log('true');
 				resp.sendRedirect("translate");
 			}
 
