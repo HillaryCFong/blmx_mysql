@@ -64,7 +64,7 @@ public class MainController extends HttpServlet {
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
 		Integer number = Integer.parseInt(req.getParameter("number"));
-		String gender = req.getParameter("gender"));
+		String gender = req.getParameter("gender");
 
 		Map<String, Object> record = new HashMap<String, Object>();
 		DBService db = DBService.getInstance();
