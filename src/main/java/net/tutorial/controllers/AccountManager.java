@@ -135,7 +135,6 @@ public class AccountManager {
 					}
 			//	} 
 			
-			else return false;
 			}
 			
 			
