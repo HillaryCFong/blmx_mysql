@@ -18,7 +18,7 @@ public class TranslatorService {
 		Map<String, String> creds = envVar.getCredentials("language_translator");
 		
 		service = new LanguageTranslator();
-		service.setUsernameAndPassword("bdf7a5e6-f64d-443f-8324-3bd25d35f9e2", "5Egb18TJUXoG");
+		service.setUsernameAndPassword("bdf7a5e6f64d443f83243bd25d35f9e2", "5Egb18TJUXoG");
 	}
 	
 	public String getTranslation(String text, String modelId) {
