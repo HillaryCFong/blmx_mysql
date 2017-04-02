@@ -1,4 +1,3 @@
-package foobar.services;
 
 import java.io.FileOutputStream;
 import java.security.MessageDigest;

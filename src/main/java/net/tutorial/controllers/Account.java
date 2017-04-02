@@ -1,4 +1,4 @@
-package foobar.classes;
+
 
 public class Account {
 	private String username;
