@@ -57,7 +57,7 @@
 						placeholder="Please enter your password." class="form-control" required
 						<c:if test="${!empty document}"> <%--value="${document.password}"--%></c:if>>
 					<p class="help-block text-danger"></p>
-					<button type="submit" class="btn btn-default">Save</button>
+					<button type="submit" class="btn btn-default">Log In</button>
 	            </div>
 	        </form>
 		</div>
