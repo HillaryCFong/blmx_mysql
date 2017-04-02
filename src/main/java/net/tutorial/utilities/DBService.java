@@ -177,7 +177,7 @@ public class DBService {
 			ps.setString(2, (String) record.get("email"));
 			ps.setString(3, (String) record.get("password"));
 			ps.setInt(4, (int) record.get("number"));
-			ps.setInt(5, (String) record.get("gender"));
+			ps.setString(5, (String) record.get("gender"));
 			if (transaction == UPDATE_RECORD) {
 				ps.setInt(6, (int) record.get("_id"));
 			}
