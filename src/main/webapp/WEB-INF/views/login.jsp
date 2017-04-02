@@ -47,10 +47,10 @@
 			</div>
 			<form name="loginForm" action="/login" id="loginForm">
 				<div class="col-md-6 col-md-offset-3">
-					<p>Username</p>
-					<input name="username" type="email"
-						placeholder="Please enter your username." class="form-control" required
-						<c:if test="${!empty document}"> <%--value="${document.username}"--%></c:if>>
+					<p>Email</p>
+					<input name="email" type="email"
+						placeholder="Please enter your email." class="form-control" required
+						<c:if test="${!empty document}"> <%--value="${document.email}"--%></c:if>>
 					<p class="help-block text-danger"></p>
 					<p>Password</p>
 					<input name="password" type="password"
