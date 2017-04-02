@@ -9,16 +9,16 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-import foobar.classes.Account;
-import foobar.database.DBConnection;
+import Account;
+import utilities.DBService;
 
 public class AccountManager {
 	public AccountManager() {}
 	
-	public void addAccount(Account a){
+/*	public void addAccount(Account a){
 		String sql = "INSERT INTO Account (username, password, role, loginAttempt, question)"
 				+ "VALUES (?,?,?,?,?);";
-		Connection conn = DBConnection.getConnection();
+		Connection conn = DBService.getConnection();
 		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -39,7 +39,7 @@ public class AccountManager {
 	
 	public void changePassword(Account a, String password){
 		String sql = "SELECT * FROM Account;";
-		Connection conn = DBConnection.getConnection();
+		Connection conn = DBService.getConnection();
 		FileOutputStream logs;
 		String timeStamp = new SimpleDateFormat("yyyy/MM/dd_HH:mm:ss").format(Calendar.getInstance().getTime());
 		
@@ -86,13 +86,13 @@ public class AccountManager {
 			e.printStackTrace();
 		}
 	}
-	
+	*/
 	public String checkAccount(Account a){
-		String sql = "SELECT * FROM Account;";
+		String sql = "SELECT * FROM users;";
 		String role = null;
-		Connection conn = DBConnection.getConnection();
+		Connection conn = DBService.getConnection();
 		FileOutputStream logs;
-		String timeStamp = new SimpleDateFormat("yyyy/MM/dd_HH:mm:ss").format(Calendar.getInstance().getTime());
+	//	String timeStamp = new SimpleDateFormat("yyyy/MM/dd_HH:mm:ss").format(Calendar.getInstance().getTime());
 		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -154,7 +154,7 @@ public class AccountManager {
 	public boolean forgotPassword(String username, String question){
 		String sql = "SELECT * FROM Account;";
 		boolean valid = false;
-		Connection conn = DBConnection.getConnection();
+		Connection conn = DBService.getConnection();
 		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
