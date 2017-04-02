@@ -59,7 +59,7 @@
 								</select>
 							</p>
 							<p class="panel">
-								<textarea name="tr-from" rows="10" class="form-control" placeholder="Message" required><c:if test="${!empty text}">${text}</c:if></textarea>
+								<textarea name="tr-from" rows="10" class="form-control" placeholder="Type text to translate here." required><c:if test="${!empty text}">${text}</c:if></textarea>
 								<p class="help-block text-danger"></p>
 							</p>
 							<p class="action">
