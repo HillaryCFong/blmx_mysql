@@ -32,7 +32,7 @@
 				placeholder="Please enter your password." required
 				<c:if test="${!empty document}">value="${document.password}"</c:if>>
 			</li>
-			<li>Cellphone Number: <input name="number" type="number"
+			<li>Cellphone Number: <input name="number" type="tel"
 				placeholder="Please enter your number." required
 				<c:if test="${!empty document}">value="${document.number}"</c:if>>
 			</li>
