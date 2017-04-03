@@ -16,7 +16,7 @@ import net.tutorial.utilities.DBService;
 import net.tutorial.utilities.Account;
 import net.tutorial.utilities.AccountManager;
 
-@WebServlet(urlPatterns={"/home", "/login", "logout",""})
+@WebServlet(urlPatterns={"/register", "/login", "logout",""})
 
 public class MainController extends HttpServlet {
 	RequestDispatcher dispatcher;
