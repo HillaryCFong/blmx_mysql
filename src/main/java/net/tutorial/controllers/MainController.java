@@ -61,7 +61,7 @@ public class MainController extends HttpServlet {
 
 
 			req.setAttribute("users", db.allRecords());
-			viewName="login";
+			
 		}
 
 		dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/" + viewName + ".jsp");
