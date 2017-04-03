@@ -88,7 +88,7 @@ public class AccountManager {
 		}
 	}
 	*/
-	public Boolean checkAccount(Account a){
+	public static Boolean checkAccount(Account a){
 		String sql = "SELECT COUNT(*) FROM 'users' WHERE email=? AND password=?;";
 		Connection conn = DBService.getConnection();
 		// FileOutputStream logs;

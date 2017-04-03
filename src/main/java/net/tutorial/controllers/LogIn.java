@@ -2,9 +2,6 @@ package net.tutorial.controllers;
 //package net.tutorial.utilities;
 
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,11 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.tutorial.utilities.DBService;
-import net.tutorial.utilities.TranslatorService;
-
 import net.tutorial.utilities.Account;
 import net.tutorial.utilities.AccountManager;
+import net.tutorial.utilities.DBService;
 
 @WebServlet("/login")
 public class LogIn extends HttpServlet {
@@ -32,20 +27,25 @@ public class LogIn extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-				AccountManager accountManager = new AccountManager();
+				//AccountManager accountManager = new AccountManager();
 		        String email = req.getParameter("email");
 				String password = req.getParameter("password");
 				Account account = new Account();
 				account.setEmail(email);
 				account.setPassword(password);
 				
-				System.out.println(accountManager.checkAccount(account));
-				if(accountManager.checkAccount(account)){
-					//	console.log("true");
-					resp.sendRedirect("home?action=translate");
-				}
-				else 
-				resp.sendRedirect("login.jsp");		
+				try {
+					System.out.println(AccountManager.checkAccount(account));
+					if(AccountManager.checkAccount(account)==true){
+						//	console.log("true");
+						resp.sendRedirect("home?action=translate");
+					}
+					else 
+					resp.sendRedirect("login.jsp");
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}		
 	}
 
 }
