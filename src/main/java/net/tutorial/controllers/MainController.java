@@ -33,9 +33,9 @@ public class MainController extends HttpServlet {
 		/*else if (param != null && param.equals("translate")) {
 			viewName = "translate";
 		}*/
-		else if (param != null && param.equals("main")) {
-			viewName = "main";
-		}
+//		else if (param != null && param.equals("main")) {
+//			viewName = "main";
+//		}
 		else if (param != null && param.equals("edit")) {
 			viewName = "contact";
 			db = DBService.getInstance();

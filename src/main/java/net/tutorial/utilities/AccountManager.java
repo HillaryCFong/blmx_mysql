@@ -89,7 +89,7 @@ public class AccountManager {
 	}
 	*/
 	public static int checkAccount(Account a){
-		String sql = "SELECT COUNT(*) FROM 'users' WHERE email=? AND password=?;";
+		String sql = "SELECT COUNT(*) FROM users WHERE email=? AND password=?;";
 		Connection conn = DBService.getConnection();
 		int count = 0;
 		// FileOutputStream logs;
