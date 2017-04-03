@@ -11,7 +11,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Cookie;
 import net.tutorial.utilities.DBService;
+import net.tutorial.utilities.Account;
+import net.tutorial.utilities.AccountManager;
 
 @WebServlet(urlPatterns={"/home", "/login", "logout"})
 
@@ -60,8 +63,10 @@ public class MainController extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		AccountManager accountManager = new AccountManager();
+		Cookie[] cookieList = request.getCookies();
 		
-		switch(request.getServletPath()){
+		switch(req.getServletPath()){
 		case "/AddCart":
 		String id = req.getParameter("id");
 		String name = req.getParameter("name");
@@ -91,8 +96,8 @@ public class MainController extends HttpServlet {
 		break;
 		
 		case "/login":
-			    String email = req.getParameter("email");
-				String password = req.getParameter("password");
+			    String email2 = req.getParameter("email");
+				String password2 = req.getParameter("password");
 				Account account = new Account();
 				account.setEmail(email);
 				account.setPassword(password);
@@ -111,7 +116,7 @@ public class MainController extends HttpServlet {
 				break;
 				
 		case "/Logout":
-				request.getSession().invalidate();
+				req.getSession().invalidate();
 				
 				for(Cookie c: cookieList){
 					if(c.getName().equals("email")){
@@ -121,7 +126,7 @@ public class MainController extends HttpServlet {
 					}	
 				}
 				
-				response.sendRedirect("SignIn.jsp");
+				res.sendRedirect("SignIn.jsp");
 				break;
 		
 	}
