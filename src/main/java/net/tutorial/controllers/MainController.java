@@ -30,9 +30,9 @@ public class MainController extends HttpServlet {
 		/*else if (param != null && param.equals("login")) {
 			viewName = "login";
 		}*/
-		else if (param != null && param.equals("translate")) {
+		/*else if (param != null && param.equals("translate")) {
 			viewName = "translate";
-		}
+		}*/
 		else if (param != null && param.equals("main")) {
 			viewName = "main";
 		}

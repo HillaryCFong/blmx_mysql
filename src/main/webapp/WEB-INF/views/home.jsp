@@ -13,7 +13,7 @@
 	<h3>Language Translation Database</h3>
 	<a href="home?action=new">* Sign Up</a>
 	<a href="/login">* Log In</a>
-	<a href="home?action=translate">* Translate</a>
+	<a href="/trans">* Translate</a>
 	<a href="home?action=main">* Main</a>
 	
 	<hr>
