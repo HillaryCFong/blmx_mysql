@@ -39,6 +39,7 @@ public class LogIn extends HttpServlet {
 				account.setEmail(email);
 				account.setPassword(password);
 				
+				System.out.println(accountManager.checkAccount(account));
 				if(accountManager.checkAccount(account)){
 					//	console.log("true");
 					resp.sendRedirect("home?action=translate");
