@@ -13,7 +13,7 @@ The technologies used in building this application are:
 * [ClearDB MySQL Database] - Highly available MySQL for Apps
 * [IBM Watson Language Translator] - Translate text from one language to another for specific domains.
 
-### Installation
+### How do deploy
 
 This application uses the [IBM Bluemix Devops Services Delivery Pipeline](https://hub.jazz.net)  to run. To deploy the application, the following steps need to be done:
 
