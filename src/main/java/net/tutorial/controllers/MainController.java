@@ -16,7 +16,7 @@ import net.tutorial.utilities.DBService;
 import net.tutorial.utilities.Account;
 import net.tutorial.utilities.AccountManager;
 
-@WebServlet(urlPatterns={"/home", "/login", "logout"})
+@WebServlet(urlPatterns={"/home", "/login", "logout",""})
 
 public class MainController extends HttpServlet {
 	RequestDispatcher dispatcher;
@@ -80,7 +80,7 @@ public class MainController extends HttpServlet {
 
 		record.put("name", name);
 		record.put("email", email);
-		record.put("password", password);
+		record.put("password", accountManager.hashPassword(password));
 		record.put("number", number);
 		record.put("gender", gender);
 
@@ -100,7 +100,7 @@ public class MainController extends HttpServlet {
 				String password2 = req.getParameter("password");
 				Account account = new Account();
 				account.setEmail(email2);
-				account.setPassword(password2);
+				account.setPassword(accountManager.hashPassword(password2));
 				
 				try {
 					if(AccountManager.checkAccount(account)==1){
