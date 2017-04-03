@@ -91,17 +91,18 @@ public class AccountManager {
 	public static boolean checkAccount(Account a){
 		String sql = "SELECT COUNT(*) FROM users WHERE email=? AND password=?;";
 		Connection conn = DBService.getConnection();
-		PreparedStatement pstmt = conn.prepareStatement(sql);
-		ResultSet rs = pstmt.executeQuery(sql);
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
 	//	int count = 0;
 		// FileOutputStream logs;
 	//	String timeStamp = new SimpleDateFormat("yyyy/MM/dd_HH:mm:ss").format(Calendar.getInstance().getTime());
 		
 		try {
+			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, Account.getEmail());
 			pstmt.setString(2, Account.getPassword());
-			
-			
+		    rs = pstmt.executeQuery(sql);
+			 
 			while(rs.next()){
 				if(a.getEmail().equals(rs.getString("email"))){
 					
@@ -111,21 +112,18 @@ public class AccountManager {
 						} 
 						else return false;
 						
-					} else{
-					 
-
 					}
 				}
-			
 				
+		    rs.close();
+			pstmt.close();
+			conn.close();
 			}
 			catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-	rs.close();
-			pstmt.close();
-			conn.close();
+	       
 		return false;
 			
 					
