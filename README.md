@@ -48,7 +48,7 @@ This application uses the [IBM Bluemix Devops Services Delivery Pipeline](https:
 19. After the **Commit** is done,  Click the **Push** button.
 20. Go back to the GitHub page where the repository was forked and verify that .cfignore and launchConfigurations are added.
 21. On the tab that was opened in number 16,  Click (open in another browser tab) the BUILD & DEPLOY button to create the delivery pipeline
-22. Follow the instructions listed on [this page](https://pong-pantola.github.io/devops-delivery-pipeline/) and execute the instructions listed on the tab that was opened in the previous step.
+22. Follow the instructions listed on [this page](https://github.com/HillaryCFong/blmx_mysql/blob/master/Delivery%20Pipeline.md) and execute the instructions listed on the tab that was opened in the previous step.
 
 
 
