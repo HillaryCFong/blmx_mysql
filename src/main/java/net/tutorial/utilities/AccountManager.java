@@ -123,11 +123,11 @@ public class AccountManager {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-	
-		return false;
-			rs.close();
+	rs.close();
 			pstmt.close();
 			conn.close();
+		return false;
+			
 					
 		
 	}
