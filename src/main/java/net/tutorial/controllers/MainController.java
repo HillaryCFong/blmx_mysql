@@ -17,7 +17,7 @@ import net.tutorial.utilities.Account;
 import net.tutorial.utilities.AccountManager;
 import net.tutorial.utilities.TranslatorService;
 
-@WebServlet(urlPatterns={"/register", "/login", "logout","/trans",""})
+@WebServlet(urlPatterns={"/register", "/login", "/logout","/trans",""})
 
 public class MainController extends HttpServlet {
 	RequestDispatcher dispatcher;
@@ -61,7 +61,6 @@ public class MainController extends HttpServlet {
 
 
 			req.setAttribute("users", db.allRecords());
-
 		}
 
 		dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/" + viewName + ".jsp");
