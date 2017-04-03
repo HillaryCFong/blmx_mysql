@@ -37,10 +37,10 @@ public class LogIn extends HttpServlet {
 				try {
 					if(AccountManager.checkAccount(account)==1){
 						//	console.log("true");
-						resp.sendRedirect("home");
+						resp.sendRedirect("main.jsp");
 					}
 					else 
-					resp.sendRedirect("home");
+					resp.sendRedirect("main.jsp");
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
