@@ -50,12 +50,12 @@
 					<p>Email</p>
 					<input name="email" type="email"
 						placeholder="Please enter your email." class="form-control" required
-						<c:if test="${!empty document}"> <%--value="${document.email}"--%></c:if>>
+						<%--<c:if test="${!empty document}"> value="${document.email}"</c:if>--%>>
 					<p class="help-block text-danger"></p>
 					<p>Password</p>
 					<input name="password" type="password"
 						placeholder="Please enter your password." class="form-control" required
-						<c:if test="${!empty document}"> <%--value="${document.password}"--%></c:if>>
+						<%--<c:if test="${!empty document}"> value="${document.password}"</c:if>--%>>
 					<p class="help-block text-danger"></p>
 					<button type="submit" class="btn btn-default">Log In</button>
 	            </div>

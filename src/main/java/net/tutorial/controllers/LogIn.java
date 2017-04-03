@@ -35,7 +35,6 @@ public class LogIn extends HttpServlet {
 				account.setPassword(password);
 				
 				try {
-					System.out.println(AccountManager.checkAccount(account));
 					if(AccountManager.checkAccount(account)==true){
 						//	console.log("true");
 						resp.sendRedirect("home");
