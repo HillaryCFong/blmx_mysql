@@ -64,7 +64,7 @@ public class MainController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		AccountManager accountManager = new AccountManager();
-		Cookie[] cookieList = request.getCookies();
+		Cookie[] cookieList = req.getCookies();
 		
 		switch(req.getServletPath()){
 		case "/AddCart":
@@ -121,12 +121,12 @@ public class MainController extends HttpServlet {
 				for(Cookie c: cookieList){
 					if(c.getName().equals("email")){
 						c.setMaxAge(0);
-						response.addCookie(c);
+						resp.addCookie(c);
 						break;
 					}	
 				}
 				
-				res.sendRedirect("SignIn.jsp");
+				resp.sendRedirect("SignIn.jsp");
 				break;
 		
 	}
