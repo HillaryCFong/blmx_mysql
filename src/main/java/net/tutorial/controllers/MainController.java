@@ -16,7 +16,7 @@ import net.tutorial.utilities.DBService;
 import net.tutorial.utilities.Account;
 import net.tutorial.utilities.AccountManager;
 
-@WebServlet(urlPatterns={"/register", "/login", "logout",""})
+@WebServlet(urlPatterns={"/register", "/login", "logout","/trans",""})
 
 public class MainController extends HttpServlet {
 	RequestDispatcher dispatcher;
@@ -24,12 +24,13 @@ public class MainController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
 		String param = req.getParameter("action");
 		String id = req.getParameter("id");
 		String viewName = "home";
 
-		if (param != null && param.equals("new")) {
-			viewName = "contact";
+		if (param != null && param.equals("register")) {
+			viewName = "register";
 		}
 		/*else if (param != null && param.equals("login")) {
 			viewName = "login";
@@ -37,9 +38,14 @@ public class MainController extends HttpServlet {
 		/*else if (param != null && param.equals("translate")) {
 			viewName = "translate";
 		}*/
-		else if (param != null && param.equals("main")) {
-			viewName = "main";
+		else if (param != null && param.equals("login")) {
+			viewName = "login";
 		}
+		
+		else if (param != null && param.equals("trans")) {
+			viewName = "traslate";
+		}
+		
 		else if (param != null && param.equals("edit")) {
 			viewName = "contact";
 			db = DBService.getInstance();
@@ -128,7 +134,18 @@ public class MainController extends HttpServlet {
 				
 				resp.sendRedirect("SignIn.jsp");
 				break;
+				
+		case "/trans":
+		String text = req.getParameter("tr-from");
+		String modelId = req.getParameter("tr-model-id");
 		
+		TranslatorService lt = new TranslatorService();
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/translate.jsp");
+		req.setAttribute("translation", lt.getTranslation(text,modelId));
+		req.setAttribute("text", text);
+		req.setAttribute("modelId", modelId);
+		dispatcher.forward(req, resp);
+		break;
 	}
 }
 
