@@ -31,7 +31,7 @@
     		<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
       			<ul class="nav navbar-nav">
         			<li class="hidden"> <a href="#page-top"></a> </li>
-        			<li> <a href="home.jsp">Log Out</a> </li>
+        			<li> <a href="home.jsp" action="logout" method="POST">Log Out</a> </li>
         			<!--
         			<li> <a class="page-scroll" href="#services">Convert</a> </li>
       				-->

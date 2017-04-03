@@ -61,6 +61,7 @@ public class MainController extends HttpServlet {
 
 
 			req.setAttribute("users", db.allRecords());
+			viewName="login";
 		}
 
 		dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/" + viewName + ".jsp");
@@ -121,7 +122,7 @@ public class MainController extends HttpServlet {
 				}
 				break;
 				
-		case "/Logout":
+		case "/logout":
 				req.getSession().invalidate();
 				
 				for(Cookie c: cookieList){

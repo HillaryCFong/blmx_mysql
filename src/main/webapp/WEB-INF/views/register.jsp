@@ -36,8 +36,12 @@
 				placeholder="Please enter your number." required
 				<c:if test="${!empty document}">value="${document.number}"</c:if>>
 			</li>
-			<li>Gender: <input name="gender" type="text"
-				placeholder="Please enter your gender." required
+			<li>Gender: <select name="gender">
+				<select>
+				  <option value="male">Male</option>
+				  <option value="female">Female</option>
+				</select>
+								
 				<c:if test="${!empty document}">value="${document.gender}"</c:if>>
 			</li>
 		</ul>
