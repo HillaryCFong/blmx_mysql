@@ -13,7 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import net.tutorial.utilities.DBService;
 
-@WebServlet({ "home", "" })
+@WebServlet(urlPatterns={"/home", "/login", "logout"})
+
 public class MainController extends HttpServlet {
 	RequestDispatcher dispatcher;
 	DBService db = null;
@@ -59,6 +60,9 @@ public class MainController extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		switch(request.getServletPath()){
+		case "/AddCart":
 		String id = req.getParameter("id");
 		String name = req.getParameter("name");
 		String email = req.getParameter("email");
@@ -83,6 +87,29 @@ public class MainController extends HttpServlet {
 		}
 
 		resp.sendRedirect("home");
+		
+		break;
+		
+		case "/login":
+			    String email = req.getParameter("email");
+				String password = req.getParameter("password");
+				Account account = new Account();
+				account.setEmail(email);
+				account.setPassword(password);
+				
+				try {
+					if(AccountManager.checkAccount(account)==1){
+						//	console.log("true");
+						resp.sendRedirect("/trans");
+					}
+					else 
+					resp.sendRedirect("/login");
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				break;
+		
 	}
 
 }
