@@ -98,7 +98,6 @@ public class AccountManager {
 	//	String timeStamp = new SimpleDateFormat("yyyy/MM/dd_HH:mm:ss").format(Calendar.getInstance().getTime());
 		
 		try {
-			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, Account.getEmail());
 			pstmt.setString(2, Account.getPassword());
 			ResultSet rs = pstmt.executeQuery();

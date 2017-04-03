@@ -112,7 +112,15 @@ public class MainController extends HttpServlet {
 				try {
 					if(AccountManager.checkAccount(account)){
 						//	console.log("true");
-						resp.sendRedirect("/trans");
+						
+					HttpSession session = request.getSession();
+					session.setAttribute("Email", email2);
+					
+					Cookie c = new Cookie("Email", email2);
+					c.setMaxAge(60*15);
+					response.addCookie(c);
+						
+					resp.sendRedirect("/trans");
 					}
 					else 
 					resp.sendRedirect("/login");
