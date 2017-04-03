@@ -112,6 +112,9 @@ public class MainController extends HttpServlet {
 				Account account = new Account();
 				account.setEmail(email2);
 				account.setPassword(accountManager.hashPassword(password2));
+				System.out.println(accountManager.hashPassword(password2));
+				
+				System.out.println(accountManager.checkAccount(account));
 				
 				try {
 					if(accountManager.checkAccount(account)){
