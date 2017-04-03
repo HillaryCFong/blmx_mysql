@@ -124,10 +124,10 @@ public class MainController extends HttpServlet {
 					c.setMaxAge(60*15);
 					resp.addCookie(c);
 						
-					resp.sendRedirect("/trans");
+					resp.sendRedirect("translate.jsp");
 					}
 					else 
-					resp.sendRedirect("/login");
+					resp.sendRedirect("login.jsp");
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
