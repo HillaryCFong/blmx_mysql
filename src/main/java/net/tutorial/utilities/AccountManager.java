@@ -89,7 +89,7 @@ public class AccountManager {
 	}
 	*/
 	public static boolean checkAccount(Account a){
-		String sql = "SELECT COUNT(*) FROM users WHERE email=? AND password=?;";
+		String sql = "SELECT * FROM users;";
 		Connection conn = DBService.getConnection();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -99,10 +99,7 @@ public class AccountManager {
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, Account.getEmail());
-			pstmt.setString(2, Account.getPassword());
-		    rs = pstmt.executeQuery(sql);
-			 
+		   
 			while(rs.next()){
 				if(a.getEmail().equals(rs.getString("email"))){
 					
