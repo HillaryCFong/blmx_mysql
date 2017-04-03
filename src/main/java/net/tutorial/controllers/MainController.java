@@ -97,7 +97,7 @@ public class MainController extends HttpServlet {
 			db.updateRecord(DBService.UPDATE_RECORD, record);
 		}
 
-		resp.sendRedirect("home");
+		resp.sendRedirect("/login");
 		
 		break;
 		
