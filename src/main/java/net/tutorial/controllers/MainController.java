@@ -32,7 +32,7 @@ public class MainController extends HttpServlet {
 		
 		String param = req.getParameter("action");
 		String id = req.getParameter("id");
-		String viewName = "login";
+		String viewName = "home";
 
 		if (param != null && param.equals("register")) {
 			viewName = "register";
