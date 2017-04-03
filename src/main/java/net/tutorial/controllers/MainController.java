@@ -67,7 +67,7 @@ public class MainController extends HttpServlet {
 		Cookie[] cookieList = req.getCookies();
 		
 		switch(req.getServletPath()){
-		case "/AddCart":
+		case "/register":
 		String id = req.getParameter("id");
 		String name = req.getParameter("name");
 		String email = req.getParameter("email");
