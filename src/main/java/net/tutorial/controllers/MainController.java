@@ -15,6 +15,7 @@ import javax.servlet.http.Cookie;
 import net.tutorial.utilities.DBService;
 import net.tutorial.utilities.Account;
 import net.tutorial.utilities.AccountManager;
+import net.tutorial.utilities.TranslatorService;
 
 @WebServlet(urlPatterns={"/register", "/login", "logout","/trans",""})
 
