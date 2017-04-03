@@ -32,18 +32,18 @@ This application uses the [IBM Bluemix Devops Services Delivery Pipeline](https:
 11. Click **Link to an existing GitHub repository**.
 12. Select the repository *<username>/blmx_mysql*.
 13. Ensure the following options are chosen:
-**Private Project:**                    checked	
-**Add features for Scrum development:**	checked	
-**Make this a Bluemix Project:**	    checked	
-**Region:**	                            IBM Bluemix US South	
-**Organization:**	                    you may leave the default selection	
-**Space:**	                            dev
+    - **Private Project:**                    checked	
+    - **Add features for Scrum development:**	checked	
+    - **Make this a Bluemix Project:**	    checked	
+    - **Region:**	                            IBM Bluemix US South	
+    - **Organization:**	                    you may leave the default selection	
+    - **Space:**	                            dev
 14. Click the **CREATE** button and wait for your project to be created.
 15. Click the **EDIT CODE** button to be redirected to Bluemix DevOps' editor.
 16. Click (open in another browser tab) the Git Repository icon found on the left side of the screen
 17. On the new tab that was opened, On the Working Directory section (right side of the page) Set the following values:
-**Select All:**	checked	
-**Commit message:**	files created when Bluemix DevOps project was created	
+    - **Select All:**	checked	
+    - **Commit message:**	files created when Bluemix DevOps project was created	
 18. Click the **Commit** button.
 19. After the **Commit** is done,  Click the **Push** button.
 20. Go back to the GitHub page where the repository was forked and verify that .cfignore and launchConfigurations are added.
