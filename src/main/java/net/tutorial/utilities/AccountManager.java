@@ -137,18 +137,20 @@ public class AccountManager {
 					}
 				} */
 			
+				
 			}
 			
 			rs.close();
 			pstmt.close();
 			conn.close();
 			
-			if (count == 1) return true;
+			if (count == 1)
+				return true;
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		return false;
+		return true;
 	}
 	
 /*
