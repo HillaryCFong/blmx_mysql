@@ -31,7 +31,7 @@
     		<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
       			<ul class="nav navbar-nav">
         			<li class="hidden"> <a href="#page-top"></a> </li>
-        			<li> <a href="">Sign Up</a> </li>
+        			<li> <a href="register?action=register">Sign Up</a> </li>
         			<!--
         			<li> <a class="page-scroll" href="#services">Convert</a> </li>
       				-->
