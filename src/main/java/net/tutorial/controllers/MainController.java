@@ -28,7 +28,7 @@ public class MainController extends HttpServlet {
 		
 		String param = req.getParameter("action");
 		String id = req.getParameter("id");
-		String viewName = "home";
+		String viewName = "login";
 
 		if (param != null && param.equals("register")) {
 			viewName = "register";
@@ -110,7 +110,7 @@ public class MainController extends HttpServlet {
 				account.setPassword(accountManager.hashPassword(password2));
 				
 				try {
-					if(AccountManager.checkAccount(account)==1){
+					if(AccountManager.checkAccount(account)){
 						//	console.log("true");
 						resp.sendRedirect("/trans");
 					}
