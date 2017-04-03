@@ -2,8 +2,8 @@ package net.tutorial.utilities;
 
 
 public class Account {
-	private String email;
-	private String password;
+	private static String email;
+	private static String password;
 	private String name;
 	private int number;
 	private String gender;
@@ -23,7 +23,7 @@ public class Account {
 		this.gender = gender;
 	}
 
-	public String getEmail() {
+	public static String getEmail() {
 		return email;
 	}
 
@@ -31,7 +31,7 @@ public class Account {
 		this.email = email;
 	}
 
-	public String getPassword() {
+	public static String getPassword() {
 		return password;
 	}
 

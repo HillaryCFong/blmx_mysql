@@ -89,19 +89,22 @@ public class AccountManager {
 	}
 	*/
 	public Boolean checkAccount(Account a){
-		String sql = "SELECT * FROM 'users';";
+		String sql = "SELECT COUNT(*) FROM 'users' WHERE email=? AND password=?;";
 		Connection conn = DBService.getConnection();
 		// FileOutputStream logs;
 	//	String timeStamp = new SimpleDateFormat("yyyy/MM/dd_HH:mm:ss").format(Calendar.getInstance().getTime());
 		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
-			ResultSet rs = pstmt.executeQuery(sql);
+			pstmt.setString(1, Account.getEmail());
+			pstmt.setString(2, Account.getPassword());
+			ResultSet rs = pstmt.executeQuery();
 			
+			int count = 0;
 			while(rs.next()){
-				if(a.getEmail().equals(rs.getString("email"))){
-					
-				/*	logs.write("\n".getBytes());
+				count = rs.getInt(1);
+				/*if(a.getEmail().equals(rs.getString("email"))){
+					logs.write("\n".getBytes());
 					logs.write(timeStamp.getBytes());
 					logs.write(" - ".getBytes());
 					logs.write(rs.getString("role").getBytes());
@@ -114,36 +117,37 @@ public class AccountManager {
 						PreparedStatement pstmtAttempt = conn.prepareStatement(sqlAttempt);
 						pstmtAttempt.setInt(1, 0);
 						pstmtAttempt.setString(2, a.getEmail());
-					*/	
+						
 						if(a.getPassword().equals(rs.getString("password"))){
-						//	if(rs.getInt("loginAttempt") >= 10){
-							//	role = "Change";
-						//	} else {
-							//	role = rs.getString("role");
-					//		}
-						//	logs.write("Login Successful.".getBytes());
+							if(rs.getInt("loginAttempt") >= 10){
+								role = "Change";
+							} else {
+								role = rs.getString("role");
+							}
+							logs.write("Login Successful.".getBytes());
 						
 						return true;
 						} 
 						
-				//		pstmtAttempt.executeUpdate();
-				//		pstmtAttempt.close();
+						pstmtAttempt.executeUpdate();
+						pstmtAttempt.close();
 					} else{
-					// logs.write("Locked Account.".getBytes());
+					 logs.write("Locked Account.".getBytes());
 					return false;
 					}
-			//	} 
+				} */
 			
 			}
 			
 			rs.close();
 			pstmt.close();
 			conn.close();
+			
+			if (count == 1) return true;
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		
 		return false;
 	}
 	

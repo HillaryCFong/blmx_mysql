@@ -32,9 +32,6 @@ public class LogIn extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		
-		
 				AccountManager accountManager = new AccountManager();
 		        String email = req.getParameter("email");
 				String password = req.getParameter("password");
@@ -42,17 +39,12 @@ public class LogIn extends HttpServlet {
 				account.setEmail(email);
 				account.setPassword(password);
 				
-			
-				if(accountManager.checkAccount(account))
-				{
-				//	console.log("true");
-				resp.sendRedirect("translate.jsp");
-			}
-
+				if(accountManager.checkAccount(account)){
+					//	console.log("true");
+					resp.sendRedirect("translate.jsp");
+				}
 				else 
-				resp.sendRedirect("login.jsp");
-
-		
+				resp.sendRedirect("login.jsp");		
 	}
 
 }
