@@ -99,8 +99,8 @@ public class MainController extends HttpServlet {
 			    String email2 = req.getParameter("email");
 				String password2 = req.getParameter("password");
 				Account account = new Account();
-				account.setEmail(email);
-				account.setPassword(password);
+				account.setEmail(email2);
+				account.setPassword(password2);
 				
 				try {
 					if(AccountManager.checkAccount(account)==1){
