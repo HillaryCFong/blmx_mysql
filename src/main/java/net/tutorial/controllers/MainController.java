@@ -12,6 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpSession;
+
+
+
 import net.tutorial.utilities.DBService;
 import net.tutorial.utilities.Account;
 import net.tutorial.utilities.AccountManager;
@@ -113,12 +117,12 @@ public class MainController extends HttpServlet {
 					if(AccountManager.checkAccount(account)){
 						//	console.log("true");
 						
-					HttpSession session = request.getSession();
+					HttpSession session = req.getSession();
 					session.setAttribute("Email", email2);
 					
 					Cookie c = new Cookie("Email", email2);
 					c.setMaxAge(60*15);
-					response.addCookie(c);
+					resp.addCookie(c);
 						
 					resp.sendRedirect("/trans");
 					}

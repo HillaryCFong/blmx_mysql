@@ -100,7 +100,6 @@ public class AccountManager {
 		try {
 			pstmt.setString(1, Account.getEmail());
 			pstmt.setString(2, Account.getPassword());
-			ResultSet rs = pstmt.executeQuery();
 			
 			
 			while(rs.next()){
@@ -111,8 +110,7 @@ public class AccountManager {
 						return true;
 						} 
 						else return false;
-						pstmtAttempt.executeUpdate();
-						pstmtAttempt.close();
+						
 					} else{
 					 
 
