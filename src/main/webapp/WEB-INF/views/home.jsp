@@ -35,7 +35,7 @@ Cookie[] cookieList = request.getCookies();
 <body>
 
 	<h3>Language Translation Database</h3>
-	<a href="home?action=new">* Sign Up</a>
+	<a href="/home">* Sign Up</a>
 	<a href="/login">* Log In</a>
 	<a href="/trans">* Translate</a>
 	<a href="home?action=main">* Main</a>
