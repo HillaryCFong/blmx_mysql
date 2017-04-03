@@ -91,6 +91,8 @@ public class AccountManager {
 	public static boolean checkAccount(Account a){
 		String sql = "SELECT COUNT(*) FROM users WHERE email=? AND password=?;";
 		Connection conn = DBService.getConnection();
+		PreparedStatement pstmt = conn.prepareStatement(sql);
+		ResultSet rs = pstmt.executeQuery(sql);
 	//	int count = 0;
 		// FileOutputStream logs;
 	//	String timeStamp = new SimpleDateFormat("yyyy/MM/dd_HH:mm:ss").format(Calendar.getInstance().getTime());
