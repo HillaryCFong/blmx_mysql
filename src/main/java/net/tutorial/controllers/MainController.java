@@ -114,7 +114,7 @@ public class MainController extends HttpServlet {
 				account.setPassword(accountManager.hashPassword(password2));
 				
 				try {
-					if(AccountManager.checkAccount(account)){
+					if(accountManager.checkAccount(account)){
 						//	console.log("true");
 						
 					HttpSession session = req.getSession();
