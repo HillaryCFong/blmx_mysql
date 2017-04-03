@@ -40,7 +40,7 @@ public class LogIn extends HttpServlet {
 						resp.sendRedirect("/trans");
 					}
 					else 
-					resp.sendRedirect("login.jsp");
+					resp.sendRedirect("/login");
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
