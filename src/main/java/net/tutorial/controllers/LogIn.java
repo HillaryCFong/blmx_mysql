@@ -41,7 +41,7 @@ public class LogIn extends HttpServlet {
 				
 				if(accountManager.checkAccount(account)){
 					//	console.log("true");
-					resp.sendRedirect("translate.jsp");
+					resp.sendRedirect("home?action=translate");
 				}
 				else 
 				resp.sendRedirect("login.jsp");		
