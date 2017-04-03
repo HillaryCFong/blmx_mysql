@@ -109,7 +109,23 @@ public class MainController extends HttpServlet {
 					e.printStackTrace();
 				}
 				break;
+				
+		case "/Logout":
+				request.getSession().invalidate();
+				
+				for(Cookie c: cookieList){
+					if(c.getName().equals("email")){
+						c.setMaxAge(0);
+						response.addCookie(c);
+						break;
+					}	
+				}
+				
+				response.sendRedirect("SignIn.jsp");
+				break;
 		
 	}
+}
+
 
 }
