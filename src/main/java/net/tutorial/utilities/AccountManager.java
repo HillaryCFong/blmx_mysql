@@ -88,10 +88,10 @@ public class AccountManager {
 		}
 	}
 	*/
-	public static int checkAccount(Account a){
+	public static boolean checkAccount(Account a){
 		String sql = "SELECT COUNT(*) FROM users WHERE email=? AND password=?;";
 		Connection conn = DBService.getConnection();
-		int count = 0;
+	//	int count = 0;
 		// FileOutputStream logs;
 	//	String timeStamp = new SimpleDateFormat("yyyy/MM/dd_HH:mm:ss").format(Calendar.getInstance().getTime());
 		
@@ -103,56 +103,34 @@ public class AccountManager {
 			
 			
 			while(rs.next()){
-				count = rs.getInt(1);
-				/*if(a.getEmail().equals(rs.getString("email"))){
-					logs.write("\n".getBytes());
-					logs.write(timeStamp.getBytes());
-					logs.write(" - ".getBytes());
-					logs.write(rs.getString("role").getBytes());
-					logs.write(" - ".getBytes());
-					logs.write(rs.getString("email").getBytes());
-					logs.write(" : ".getBytes());
+				if(a.getEmail().equals(rs.getString("email"))){
 					
-					if(rs.getInt("loginAttempt") % 10 == 0 || rs.getInt("loginAttempt") % 5 != 0){
-						String sqlAttempt = "UPDATE Account SET loginAttempt = ? WHERE email = ?;";
-						PreparedStatement pstmtAttempt = conn.prepareStatement(sqlAttempt);
-						pstmtAttempt.setInt(1, 0);
-						pstmtAttempt.setString(2, a.getEmail());
-						
 						if(a.getPassword().equals(rs.getString("password"))){
-							if(rs.getInt("loginAttempt") >= 10){
-								role = "Change";
-							} else {
-								role = rs.getString("role");
-							}
-							logs.write("Login Successful.".getBytes());
-						
+							
 						return true;
 						} 
-						
+						else return false;
 						pstmtAttempt.executeUpdate();
 						pstmtAttempt.close();
 					} else{
-					 logs.write("Locked Account.".getBytes());
-					return false;
+					 
+
 					}
-				} */
+				}
 			
 				
 			}
-			
-			rs.close();
-			pstmt.close();
-			conn.close();
-			
-			//if (count == 1)
-				
-		} catch (Exception e) {
+			catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		//return true;
-		return count;
+	
+		return false;
+			rs.close();
+			pstmt.close();
+			conn.close();
+					
+		
 	}
 	
 /*
