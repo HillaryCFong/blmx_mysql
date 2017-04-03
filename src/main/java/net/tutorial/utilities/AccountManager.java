@@ -88,9 +88,10 @@ public class AccountManager {
 		}
 	}
 	*/
-	public static Boolean checkAccount(Account a){
+	public static int checkAccount(Account a){
 		String sql = "SELECT COUNT(*) FROM 'users' WHERE email=? AND password=?;";
 		Connection conn = DBService.getConnection();
+		int count = 0;
 		// FileOutputStream logs;
 	//	String timeStamp = new SimpleDateFormat("yyyy/MM/dd_HH:mm:ss").format(Calendar.getInstance().getTime());
 		
@@ -100,7 +101,7 @@ public class AccountManager {
 			pstmt.setString(2, Account.getPassword());
 			ResultSet rs = pstmt.executeQuery();
 			
-			int count = 0;
+			
 			while(rs.next()){
 				count = rs.getInt(1);
 				/*if(a.getEmail().equals(rs.getString("email"))){
@@ -144,13 +145,14 @@ public class AccountManager {
 			pstmt.close();
 			conn.close();
 			
-			if (count == 1)
-				return true;
+			//if (count == 1)
+				
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
-		return true;
+		//return true;
+		return count;
 	}
 	
 /*
