@@ -143,7 +143,7 @@ public class MainController extends HttpServlet {
 					e.printStackTrace();
 				}
 				break;
-				*/
+			
 		case "/logout":
 				req.getSession().invalidate();
 				
