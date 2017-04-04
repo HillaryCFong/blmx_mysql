@@ -12,7 +12,7 @@
 	<h3><c:if test="${empty document}">New</c:if> Contact Form</h3>
 	<form action="register" method="POST">
 		<button type="submit">Save</button>
-		<a href="home">Cancel</a>
+		<a href="login">Cancel</a>
 		<hr>
 
 		<c:if test="${!empty document}">
@@ -37,7 +37,6 @@
 				<c:if test="${!empty document}">value="${document.number}"</c:if>>
 			</li>
 			<li>Gender: <select name="gender">
-				<select>
 				  <option value="male">Male</option>
 				  <option value="female">Female</option>
 				</select>
