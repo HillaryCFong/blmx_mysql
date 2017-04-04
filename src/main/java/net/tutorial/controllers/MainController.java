@@ -115,7 +115,8 @@ public class MainController extends HttpServlet {
 				System.out.println(accountManager.hashPassword(password2));
 				
 				System.out.println(accountManager.checkAccount(account));
-				
+				resp.sendRedirect("translate.jsp");
+			/*	
 				try {
 					if(accountManager.checkAccount(account)){
 						//	console.log("true");
@@ -136,7 +137,7 @@ public class MainController extends HttpServlet {
 					e.printStackTrace();
 				}
 				break;
-				
+				*/
 		case "/logout":
 				req.getSession().invalidate();
 				
