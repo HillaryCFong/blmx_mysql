@@ -6,7 +6,6 @@ import java.security.MessageDigest;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -89,15 +88,12 @@ public class AccountManager {
 		}
 	}
 	*/
-	public static boolean checkAccount(Account a) throws ClassNotFoundException, SQLException{
-//		String sql = "SELECT * FROM users";
-		String sql = "SELECT COUNT(*) FROM users where email=? AND password=?";
+	public static boolean checkAccount(Account a){
+		String sql = "SELECT * FROM users;";
 		Connection conn = DBService.getConnection();
 		PreparedStatement pstmt = null;
-		pstmt.setString(1, Account.getEmail());
-		pstmt.setString(2, Account.getPassword());
 		ResultSet rs = null;
-		int count = 0;
+	//	int count = 0;
 		// FileOutputStream logs;
 	//	String timeStamp = new SimpleDateFormat("yyyy/MM/dd_HH:mm:ss").format(Calendar.getInstance().getTime());
 		
@@ -105,26 +101,21 @@ public class AccountManager {
 			pstmt = conn.prepareStatement(sql);
 		   
 			while(rs.next()){
-				count = rs.getInt(1);
-//				if(a.getEmail().equals(rs.getString("email"))){
-//					
-//						if(a.getPassword().equals(rs.getString("password"))){
-//							
-//						return true;
-//						} 
-//						else return false;
-//						
-//					}
+				if(a.getEmail().equals(rs.getString("email"))){
+					
+						if(a.getPassword().equals(rs.getString("password"))){
+							
+						return true;
+						} 
+						else return false;
+						
+					}
 				}
 				
 		    rs.close();
 			pstmt.close();
 			conn.close();
-			if (count == 1)
-				return true;
-			else
-				return false;
-		}
+			}
 			catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
