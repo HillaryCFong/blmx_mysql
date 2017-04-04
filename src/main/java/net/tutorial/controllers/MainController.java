@@ -117,9 +117,8 @@ public class MainController extends HttpServlet {
 				System.out.println(accountManager.hashPassword(password2));
 				
 				System.out.println(accountManager.checkAccount(account));
-				dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/translate.jsp");
-		dispatcher.forward(req, resp);
-			/*	
+				
+			
 				try {
 					if(accountManager.checkAccount(account)){
 						//	console.log("true");
@@ -131,10 +130,14 @@ public class MainController extends HttpServlet {
 					c.setMaxAge(60*15);
 					resp.addCookie(c);
 						
-					resp.sendRedirect("translate.jsp");
+					dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/translate.jsp");
+	            	dispatcher.forward(req, resp);
 					}
-					else 
-					resp.sendRedirect("login.jsp");
+					else {
+					dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/login.jsp");
+					dispatcher.forward(req, resp);
+					}
+					
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
