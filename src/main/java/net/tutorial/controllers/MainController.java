@@ -1,4 +1,5 @@
 package net.tutorial.controllers;
+package webapp.WEB-INF.views;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -55,12 +56,13 @@ public class MainController extends HttpServlet {
 			viewName = "contact";
 			db = DBService.getInstance();
 			req.setAttribute("document", db.findRecord(Integer.parseInt(id)));
-
+			viewName="login";
 		}
 		else {
 			db = DBService.getInstance();
 			if (param != null && id != null && param.equals("delete")) {
 				db.deleteRecord(Integer.parseInt(id));
+				viewName="login";
 			}
 
 
@@ -115,7 +117,7 @@ public class MainController extends HttpServlet {
 				System.out.println(accountManager.hashPassword(password2));
 				
 				System.out.println(accountManager.checkAccount(account));
-				resp.sendRedirect("webapp/WEB-INF/views/translate.jsp");
+				resp.sendRedirect("/WEB-INF/views/translate.jsp");
 			/*	
 				try {
 					if(accountManager.checkAccount(account)){
