@@ -45,7 +45,7 @@
 				<h2>Log In</h2>
 				<hr>
 			</div>
-			<form method="post" name="loginForm" action="/login" id="loginForm">
+			<form method="post" name="loginForm" action="login" id="loginForm">
 				<div class="col-md-6 col-md-offset-3">
 					<p>Email</p>
 					<input name="email" type="email"
