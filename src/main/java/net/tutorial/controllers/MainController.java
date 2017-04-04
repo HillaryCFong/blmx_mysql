@@ -114,7 +114,15 @@ public class MainController extends HttpServlet {
 				account.setPassword(accountManager.hashPassword(password2));
 				System.out.println(accountManager.hashPassword(password2));
 				
-				System.out.println(accountManager.checkAccount(account));
+			try {
+				System.out.println(AccountManager.checkAccount(account));
+			} catch (ClassNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 				
 				try {
 					if(accountManager.checkAccount(account)){
