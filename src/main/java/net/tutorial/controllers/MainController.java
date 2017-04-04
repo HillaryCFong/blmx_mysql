@@ -160,11 +160,11 @@ public class MainController extends HttpServlet {
 		String modelId = req.getParameter("tr-model-id");
 		
 		TranslatorService lt = new TranslatorService();
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/translate.jsp");
+		RequestDispatcher dispatcher2 = getServletContext().getRequestDispatcher("/WEB-INF/views/translate.jsp");
 		req.setAttribute("translation", lt.getTranslation(text,modelId));
 		req.setAttribute("text", text);
 		req.setAttribute("modelId", modelId);
-		dispatcher.forward(req, resp);
+		dispatcher2.forward(req, resp);
 		break;
 	}
 }
