@@ -77,7 +77,8 @@ public class MainController extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		AccountManager accountManager = new AccountManager();
 		Cookie[] cookieList = req.getCookies();
-		
+    	RequestDispatcher dispatcher;
+	
 		switch(req.getServletPath()){
 		case "/register":
 		String id = req.getParameter("id");
@@ -116,7 +117,8 @@ public class MainController extends HttpServlet {
 				System.out.println(accountManager.hashPassword(password2));
 				
 				System.out.println(accountManager.checkAccount(account));
-				resp.sendRedirect("/trans");
+				dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/translate.jsp");
+		dispatcher.forward(req, resp);
 			/*	
 				try {
 					if(accountManager.checkAccount(account)){
