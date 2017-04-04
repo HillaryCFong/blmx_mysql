@@ -115,7 +115,7 @@ public class MainController extends HttpServlet {
 				System.out.println(accountManager.hashPassword(password2));
 				
 				System.out.println(accountManager.checkAccount(account));
-				resp.sendRedirect("translate.jsp");
+				resp.sendRedirect("webapp/WEB-INF/views/translate.jsp");
 			/*	
 				try {
 					if(accountManager.checkAccount(account)){
@@ -149,7 +149,7 @@ public class MainController extends HttpServlet {
 					}	
 				}
 				
-				resp.sendRedirect("SignIn.jsp");
+				resp.sendRedirect("login.jsp");
 				break;
 				
 		case "/trans":
