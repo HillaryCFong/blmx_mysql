@@ -99,7 +99,7 @@ public class AccountManager {
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
-		    ResultSet rs = pstmt.executeQuery(sql);
+		    rs = pstmt.executeQuery(sql);
 			while(rs.next()){
 				if(a.getEmail().equals(rs.getString("email"))){
 					
