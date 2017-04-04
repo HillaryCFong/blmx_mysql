@@ -128,6 +128,8 @@ public class MainController extends HttpServlet {
 						//	console.log("true");
 						
 					HttpSession session = req.getSession();
+					session.setAttribute("Valid", true);
+						
 					session.setAttribute("Email", email2);
 					
 					Cookie c = new Cookie("Email", email2);
@@ -138,6 +140,8 @@ public class MainController extends HttpServlet {
 	            	dispatcher.forward(req, resp);
 					}
 					else {
+						req.getSession().setAttribute("Error", "Error");
+					
 					dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/login.jsp");
 					dispatcher.forward(req, resp);
 					}
