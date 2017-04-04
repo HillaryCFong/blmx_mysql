@@ -116,7 +116,7 @@ public class MainController extends HttpServlet {
 				System.out.println(accountManager.hashPassword(password2));
 				
 				System.out.println(accountManager.checkAccount(account));
-				resp.sendRedirect("/WEB-INF/views/translate.jsp");
+				resp.sendRedirect("/trans");
 			/*	
 				try {
 					if(accountManager.checkAccount(account)){
