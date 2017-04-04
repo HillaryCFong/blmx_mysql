@@ -150,7 +150,7 @@ public class MainController extends HttpServlet {
 			
 		case "/logout":
 		
-				req.getSession().invalidate();
+		//		req.getSession().invalidate();
 				
 				for(Cookie c: cookieList){
 					if(c.getName().equals("email")){
