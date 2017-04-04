@@ -155,7 +155,8 @@ public class MainController extends HttpServlet {
 					}	
 				}
 				
-				resp.sendRedirect("login.jsp");
+				dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/login.jsp");
+				dispatcher.forward(req, resp);
 				break;
 				
 		case "/trans":
