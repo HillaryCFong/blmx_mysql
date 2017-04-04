@@ -1,5 +1,4 @@
 package net.tutorial.controllers;
-package webapp.WEB-INF.views;
 
 import java.io.IOException;
 import java.sql.SQLException;
