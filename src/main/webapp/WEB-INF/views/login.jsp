@@ -47,11 +47,11 @@
 			</div>
 			<form method="POST" name="loginForm" action="login" id="loginForm">
 				<div class="col-md-6 col-md-offset-3">
-					<p>Email</p>
+					<p>Email:</p>
 					<input name="email" type="email"
 						placeholder="Please enter your email." class="form-control" required>
 					<p class="help-block text-danger"></p>
-					<p>Password</p>
+					<p>Password:</p>
 					<input name="password" type="password"
 						placeholder="Please enter your password." class="form-control" required>
 					<p class="help-block text-danger"></p>
