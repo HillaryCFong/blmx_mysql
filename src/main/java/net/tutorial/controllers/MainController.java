@@ -48,7 +48,7 @@ public class MainController extends HttpServlet {
 		}
 		
 		else if (param != null && param.equals("trans")) {
-			viewName = "traslate";
+			viewName = "trans";
 		}
 		
 		else if (param != null && param.equals("edit")) {
