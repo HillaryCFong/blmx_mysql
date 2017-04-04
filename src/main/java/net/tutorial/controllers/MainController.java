@@ -51,6 +51,10 @@ public class MainController extends HttpServlet {
 			viewName = "translate";
 		}
 		
+		else if (param != null && param.equals("logout")) {
+			viewName = "login";
+		}
+		
 		else if (param != null && param.equals("edit")) {
 			viewName = "contact";
 			db = DBService.getInstance();
@@ -145,6 +149,7 @@ public class MainController extends HttpServlet {
 				break;
 			
 		case "/logout":
+		
 				req.getSession().invalidate();
 				
 				for(Cookie c: cookieList){
