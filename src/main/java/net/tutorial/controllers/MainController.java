@@ -135,7 +135,7 @@ public class MainController extends HttpServlet {
 					c.setMaxAge(60*15);
 					resp.addCookie(c);
 						
-					resp.sendRedirect("trans?action=trans");
+					resp.sendRedirect("translate.jsp");
 					}
 					else 
 					resp.sendRedirect("login?action=login");
