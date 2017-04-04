@@ -23,7 +23,7 @@
       			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
       				<i class="fa fa-bars"></i>
       			</button>
-      			<a class="navbar-brand page-scroll" href="login?action=login"> 
+      			<a class="navbar-brand page-scroll"> 
       				<i class="fa fa-paper-plane-o"></i> Translator
       			</a>
       		</div>
