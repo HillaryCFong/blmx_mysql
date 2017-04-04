@@ -138,7 +138,7 @@ public class MainController extends HttpServlet {
 					resp.sendRedirect("translate.jsp");
 					}
 					else 
-					resp.sendRedirect("login?action=login");
+					resp.sendRedirect("login.jsp");
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
