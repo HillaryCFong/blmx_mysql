@@ -89,14 +89,13 @@ public class AccountManager {
 		ResultSet rs = null;
 		int count = 0;
 		// FileOutputStream logs;
-		// String timeStamp = new SimpleDateFormat("yyyy/MM/dd_HH:mm:ss").format(Calendar.getInstance().getTime());
+	//	String timeStamp = new SimpleDateFormat("yyyy/MM/dd_HH:mm:ss").format(Calendar.getInstance().getTime());
 		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, Account.getEmail());
 			pstmt.setString(2, Account.getPassword());
 		    rs = pstmt.executeQuery();
-		    count = 0;
 			while(rs.next()){
 				count = rs.getInt(1);
 //				if(a.getEmail().equals(rs.getString("email"))){
@@ -108,7 +107,7 @@ public class AccountManager {
 //						else return false;
 //						
 //					}
-			}
+				}
 				
 		    rs.close();
 			pstmt.close();
