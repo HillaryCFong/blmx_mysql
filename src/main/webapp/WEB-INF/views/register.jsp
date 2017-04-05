@@ -63,7 +63,7 @@
 						<c:if test="${!empty document}">value="${document.password}"</c:if>>
 					</p>
 					<p>Cellphone Number: <input name="number" type="tel"
-						placeholder="Please enter your number." required
+						placeholder="Please enter your number." class="form-control" required
 						<c:if test="${!empty document}">value="${document.number}"</c:if>>
 					</p>
 					<p>Gender: 
