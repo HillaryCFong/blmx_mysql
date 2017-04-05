@@ -41,14 +41,22 @@ public class EnvVariables {
 	        JSONObject serviceInstance = (JSONObject) serviceConfig.get(0);
 	        JSONObject serviceCreds = (JSONObject) serviceInstance.get("credentials");
 			
-		creds.put("jdbcUrl", serviceCreds.get("jdbcUrl").toString());
-			creds.put("username", serviceCreds.get("username").toString());
-			creds.put("password",  serviceCreds.get("password").toString());
-		} else {
-			creds.put("jdbcUrl", "jdbc:mysql://us-cdbr-iron-east-03.cleardb.net/ad_1a3e20df4785a73?user=bfc3e0aefffbde&password=23266933"); // Put username here if you are testing in local
-			creds.put("username", "b1e52a1f-3ac8-4720-8b48-0fff059d339b"); // Put username here if you are testing in local
-			creds.put("password",  "6xFBkXxxgAPC"); // Put password here if you are testing in local
-
+			if (serviceName.equals("language_translator")){
+				creds.put("username", serviceCreds.get("username").toString());
+				creds.put("password",  serviceCreds.get("password").toString());
+			}
+			else if(serviceName.equals("cleardb")){
+				creds.put("jdbcUrl", serviceCreds.get("jdbcUrl").toString());
+			}
+		} 
+		else {
+			if (serviceName.equals("language_translator")){
+				creds.put("username", "b1e52a1f-3ac8-4720-8b48-0fff059d339b"); // Put username here if you are testing in local
+				creds.put("password",  "6xFBkXxxgAPC"); // Put password here if you are testing in local
+			}
+			else if(serviceName.equals("cleardb")){
+				creds.put("jdbcUrl", "jdbc:mysql://us-cdbr-iron-east-03.cleardb.net/ad_1a3e20df4785a73?user=bfc3e0aefffbde&password=23266933"); // Put username here if you are testing in local
+			}
 		}
 		
 		return creds;
