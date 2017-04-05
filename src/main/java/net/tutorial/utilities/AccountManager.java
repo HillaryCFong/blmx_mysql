@@ -1,17 +1,10 @@
 //package net.tutorial.controllers;
 package net.tutorial.utilities;
 
-import java.io.FileOutputStream;
 import java.security.MessageDigest;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-
-//import net.tutorial.utilities.Account;
-import net.tutorial.utilities.DBService;
 
 public class AccountManager {
 	public AccountManager() {}
@@ -102,7 +95,7 @@ public class AccountManager {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, Account.getEmail());
 			pstmt.setString(2, Account.getPassword());
-		    rs = pstmt.executeQuery(sql);
+		    rs = pstmt.executeQuery();
 			while(rs.next()){
 				count = rs.getInt(1);
 //				if(a.getEmail().equals(rs.getString("email"))){
