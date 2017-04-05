@@ -124,7 +124,7 @@ public class MainController extends HttpServlet {
 				
 			
 				try {
-					if(accountManager.checkAccount(account) == 1){
+					if(accountManager.checkAccount(account)){
 						//	console.log("true");
 						
 					HttpSession session = req.getSession();
