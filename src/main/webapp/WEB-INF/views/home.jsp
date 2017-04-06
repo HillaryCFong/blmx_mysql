@@ -5,7 +5,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <%
-
+RequestDispatcher dispatcher;
+	
 Cookie[] cookieList = request.getCookies();
 	AccountManager accountManager = new AccountManager();
 	boolean hasLoggedIn = false;
@@ -28,9 +29,12 @@ Cookie[] cookieList = request.getCookies();
 	}
 	
 	if(!hasLoggedIn){
-		response.sendRedirect("login.jsp");
+			dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/login.jsp");
+					dispatcher.forward(req, resp);
+					
 	}	else {
-		response.sendRedirect("translate.jsp");
+			dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/translate.jsp");
+					dispatcher.forward(req, resp);
 	}
 %>
 
