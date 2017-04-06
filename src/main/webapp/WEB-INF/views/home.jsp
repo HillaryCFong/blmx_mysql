@@ -18,13 +18,19 @@ Cookie[] cookieList = request.getCookies();
 	
 	if(cookieList != null) {
 		for(Cookie c: cookieList){
-			if(c.getName().equals("email") && request.getSession().getAttribute("email") != null){
+			if(c.getName().equals("Email") && request.getSession().getAttribute("Email") != null){
 				hasLoggedIn = true;
 				c.setMaxAge(60*15);
 				response.addCookie(c);
 				break;
 			}
 		}
+	}
+	
+	if(!hasLoggedIn){
+		response.sendRedirect("login.jsp");
+	}	else {
+		response.sendRedirect("translate.jsp");
 	}
 %>
 
