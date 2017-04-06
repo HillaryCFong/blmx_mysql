@@ -154,7 +154,7 @@ public class MainController extends HttpServlet {
 			
 		case "/logout":
 		
-				req.getSession().invalidate();
+			
 				
 				for(Cookie c: cookieList){
 					if(c.getName().equals("Email")){
@@ -163,7 +163,7 @@ public class MainController extends HttpServlet {
 						break;
 					}	
 				}
-				
+					req.getSession().invalidate();
 				dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/login.jsp");
 				dispatcher.forward(req, resp);
 				break;
