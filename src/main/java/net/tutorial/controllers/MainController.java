@@ -155,7 +155,8 @@ public class MainController extends HttpServlet {
 		case "/logout":
 		
 			
-				
+				Cookie[] cookieList = req.getCookies();
+	
 				for(Cookie c: cookieList){
 					if(c.getName().equals("Email")){
 						c.setMaxAge(0);
