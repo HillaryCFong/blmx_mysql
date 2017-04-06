@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+li<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -31,7 +31,8 @@
     		<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
       			<ul class="nav navbar-nav">
         			<li class="hidden"> <a href="#page-top"></a> </li>
-        			<li> <a href="login?action=logout" method="POST">Log Out</a> </li>
+        			<li<% session.getAttribute("email2"); %> <a href="login?action=logout" method="POST">Log Out</a> </li>
+        			
         			<!--
         			<li> <a class="page-scroll" href="#services">Convert</a> </li>
       				-->
