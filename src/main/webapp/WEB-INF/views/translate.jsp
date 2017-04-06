@@ -67,7 +67,7 @@ li<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 							<center><p class="action">
 								<input type="submit" value="Translate" class="btn btn-default">
 							</p></center>
-						</form>
+						
 					</div>
     			</div>
     			<div class="col-md-6">
@@ -80,6 +80,11 @@ li<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     				</div>
     			</div>
 			</div>
+			</p>
+			<br>
+							<center><p class="action">
+								<input type="submit" value="Translate" class="btn btn-default">
+							</p></center></form>
 		</div>
 	</div>
 </body>
