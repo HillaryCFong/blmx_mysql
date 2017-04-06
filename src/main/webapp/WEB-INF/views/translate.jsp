@@ -40,13 +40,10 @@ li<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     		</div>
   		</div>
 	</nav>
-	<div> 
-		<% session.getAttribute("email2"); %>
-	</div>
 	<div id="services" class="text-center">
 		<div class="container">
     		<div class="section-title text-center center">
-				<h2>Translate Text</h2>
+				<h2><% session.getAttribute("email2"); %></h2>
 				<hr>
     		</div>
     		<div class="space"></div>
