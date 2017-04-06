@@ -14,6 +14,19 @@
 	<!-- Stylesheet -->
 	<link rel="stylesheet" type="text/css"  href="css/styles0.css">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300" rel="stylesheet" type="text/css">
+	
+	<script>
+	function validateForm() {
+    var x = document.forms["myForm"]["password"].value;
+    var y = document.forms["myForm"]["password1"].value;
+    if (x == y) {
+        alert("Password are not the same!");
+        return false;
+    }
+}
+</script>
+	
+	
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -45,7 +58,7 @@
 				<h2><c:if test="${empty document}">New</c:if> Contact Form</h2>
 				<hr>
 			</div>
-			<form action="register" method="POST">
+			<form  name="myForm" onsubmit="return validateForm()" action="register" method="POST">
 				<div class="col-md-6 col-md-offset-3">
 					<c:if test="${!empty document}">
 						<input name="id" type="hidden" value="${document._id}">
@@ -60,6 +73,10 @@
 					</p>
 					<p>Password: <input name="password" type="password"
 						placeholder="Please enter your password." class="form-control" required
+						<c:if test="${!empty document}">value="${document.password}"</c:if>>
+					</p>
+					<p>Confirm Password: <input name="password1" type="password"
+						placeholder="Please confirm your password." class="form-control" required
 						<c:if test="${!empty document}">value="${document.password}"</c:if>>
 					</p>
 					<p>Cellphone Number: <input name="number" type="tel"

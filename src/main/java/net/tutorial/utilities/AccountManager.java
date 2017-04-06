@@ -107,7 +107,6 @@ public class AccountManager {
 							
 						return true;
 						} 
-						else return false;
 						
 					}
 				}
