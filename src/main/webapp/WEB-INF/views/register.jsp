@@ -77,7 +77,7 @@
 					</p>
 					<p>Confirm Password: <input name="password1" type="password"
 						placeholder="Please confirm your password." class="form-control" required
-						<c:if test="${!empty document}">value="${document.password}"</c:if>>
+						<c:if test="${!empty document}">value="${document.password1}"</c:if>>
 					</p>
 					<p>Cellphone Number: <input name="number" type="tel"
 						placeholder="Please enter your number." class="form-control" required
@@ -90,7 +90,7 @@
 						</select>
 						<c:if test="${!empty document}">value="${document.gender}"</c:if>
 					</p>
-					<button type="submit" class="btn btn-default">Save</button>
+					<button type="submit" class="btn btn-default" value = "Submit">Save</button>
 				</div>
 			</form>
 		</div>
