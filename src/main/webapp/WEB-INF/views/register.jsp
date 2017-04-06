@@ -19,8 +19,10 @@
 	function validateForm() {
     var x = document.forms["myForm"]["password"].value;
     var y = document.forms["myForm"]["password1"].value;
-    if (x == y) {
+    
+    if (x != y) {
         alert("Password are not the same!");
+        
         return false;
     }
 }
@@ -61,7 +63,7 @@
 			<form  name="myForm" onsubmit="return validateForm()" action="register" method="POST">
 				<div class="col-md-6 col-md-offset-3">
 					<c:if test="${!empty document}">
-						<input name="id" type="hidden" value="${document._id}">
+						<input name="id" type="hidden" value="${document._id}" >
 					</c:if>
 					<p>Full Name: <input name="name" type="text"
 						placeholder="Please enter your name." class="form-control" required
@@ -77,7 +79,6 @@
 					</p>
 					<p>Confirm Password: <input name="password1" type="password"
 						placeholder="Please confirm your password." class="form-control" required
-						<c:if test="${!empty document}">value="${document.password1}"</c:if>>
 					</p>
 					<p>Cellphone Number: <input name="number" type="tel"
 						placeholder="Please enter your number." class="form-control" required
