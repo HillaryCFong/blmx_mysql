@@ -14,6 +14,34 @@
 	<!-- Stylesheet -->
 	<link rel="stylesheet" type="text/css"  href="css/styles0.css">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300" rel="stylesheet" type="text/css">
+	
+	<script>
+	
+		function validateForm() {
+    var x = document.forms["loginForm"]["email"].value;
+    var y = document.forms["loginForm"]["password"].value;
+    
+    <c:forEach items="${users}" var="contact">
+			
+	if (x == <c:out value="${contact.email}" /> %% y ==	<c:out value="${contact.password}" /> ){
+			
+		return true;}
+				
+	</c:forEach>
+    
+    else {
+        alert("Invalid credentials!");
+        
+        return false;
+    }
+}
+	
+			
+			
+	
+	</script>
+	
+	
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -45,7 +73,7 @@
 				<h2>Log In</h2>
 				<hr>
 			</div>
-			<form method="POST" name="loginForm" action="login" id="loginForm">
+			<form method="POST" name="loginForm" action="login" id="loginForm" onsubmit="return validateForm()">
 				<div class="col-md-6 col-md-offset-3">
 					<p>Email:</p>
 					<input name="email" type="email"
@@ -55,7 +83,7 @@
 					<input name="password" type="password"
 						placeholder="Please enter your password." class="form-control" required>
 					<p class="help-block text-danger"></p>
-					<button type="submit" class="btn btn-default">Log In</button>
+					<button type="submit" value="Submit" class="btn btn-default">Log In</button>
 	            </div>
 	        </form>
 		</div>
