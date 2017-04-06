@@ -31,7 +31,6 @@ li<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     		<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
       			<ul class="nav navbar-nav">
         			<li class="hidden"> <a href="#page-top"></a> </li>
-        			<li> <% session.getAttribute("email2"); %></li>
         			<li> <a href="login?action=logout" method="POST">Log Out</a> </li>
         			
         			<!--
@@ -41,6 +40,7 @@ li<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     		</div>
   		</div>
 	</nav>
+	<div> <% session.getAttribute("email2"); %></div>
 	<div id="services" class="text-center">
 		<div class="container">
     		<div class="section-title text-center center">
