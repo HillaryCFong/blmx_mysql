@@ -29,10 +29,12 @@ Cookie[] cookieList = request.getCookies();
 	
 	if(!hasLoggedIn){
 		
-		alert("h");
-					
+		RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
+rd.forward(request, response);			
 	}	else {
-		response.sendRedirect("translate.jsp");
+		
+		RequestDispatcher rd2 = request.getRequestDispatcher("translate.jsp");
+rd2.forward(request, response);
 	}
 %>
 
