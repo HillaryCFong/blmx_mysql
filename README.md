@@ -2,9 +2,13 @@
 ### Overview
 This repository contains a java web application that simulates a member based service software. 
 
-  - A client can log in and use various services depending on their availed package.  - Currently, this web application has the language translation service installed.
- - Select a translation from English to Arabic, French, Portuguese, or Spanish.
+  - A client can log in and use various services depending on their availed package.  
+- Currently, this web application has the language translation service installed.
+- The translation service uses the English input from the client and translate the text to Arabic, French, Portuguese, or Spanish.
+- Other applications  can be availed by the clients in the future depending on their needs and wants.  
+- Such applications include Speech to Text, Text to Speech, Trade-Off Analytics, and many more!
 
+This application was created with the vision of having a single account for all the software and services a client needs.  This would make the lives of the clients convenient as everything can be found in one place. Also, software developers can benefit from this application as well because their applications can be bought and availed by the clients to use.  
 ### Tech
 
 The technologies used in building this application are:
