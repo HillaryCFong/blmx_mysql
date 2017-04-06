@@ -140,7 +140,7 @@ public class MainController extends HttpServlet {
 	            	dispatcher.forward(req, resp);
 					}
 					else {
-						req.getSession().setAttribute("Error", "Error");
+					//	req.getSession().setAttribute("Error", "Error");
 					
 					dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/login.jsp");
 					dispatcher.forward(req, resp);
