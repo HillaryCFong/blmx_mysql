@@ -64,9 +64,9 @@ li<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 								<textarea name="tr-from" rows="10" class="form-control" placeholder="Type text to translate here." required><c:if test="${!empty text}">${text}</c:if></textarea>
 								<p class="help-block text-danger"></p>
 							</p>
-							<p class="action">
+							<center><p class="action">
 								<input type="submit" value="Translate" class="btn btn-default">
-							</p>
+							</p></center>
 						</form>
 					</div>
     			</div>
@@ -76,16 +76,7 @@ li<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     					<p class="panel">
 							<textarea class="form-control" name="tr-to" rows="10" readonly><c:if test="${!empty translation}">${translation}</c:if></textarea>
 						</p>
-						<p class="action">
-							<button type="button" class="btn btn-default">
-								<i class="fa fa-thumbs-o-up"></i>
-								<span class="badge">0</span>
-							</button>
-							<button type="button" class="btn btn-default">
-								<i class="fa fa-thumbs-o-down"></i>
-								<span class="badge">0</span>
-							</button>
-						</p>
+					
     				</div>
     			</div>
 			</div>
