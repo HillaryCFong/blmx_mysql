@@ -1,11 +1,9 @@
 # LBYCLDS Final Project: Translator Service
 ### Overview
-This repository contains a java web application that lets a user add feedback to corresponding translations to a certain English word or phrase.
+This repository contains a java web application that simulates a member based service software. 
 
-  - Select a translation from English to Arabic, French, Portuguese, or Spanish.
-  - Input the English word or phrase and see the translation
-  - Give feedback to the translation (thumbs up or thumbs down)
-
+  - A client can log in and use various services depending on their availed package.  - Currently, this web application has the language translation service installed.
+ - Select a translation from English to Arabic, French, Portuguese, or Spanish.
 
 ### Tech
 

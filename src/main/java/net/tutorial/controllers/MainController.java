@@ -142,7 +142,7 @@ public class MainController extends HttpServlet {
 					else {
 						req.getSession().setAttribute("Error", "Error");
 					
-					dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/login.jsp?action=login");
+					dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/login.jsp");
 					dispatcher.forward(req, resp);
 					}
 					
@@ -154,10 +154,10 @@ public class MainController extends HttpServlet {
 			
 		case "/logout":
 		
-		//		req.getSession().invalidate();
+				req.getSession().invalidate();
 				
 				for(Cookie c: cookieList){
-					if(c.getName().equals("email")){
+					if(c.getName().equals("Email")){
 						c.setMaxAge(0);
 						resp.addCookie(c);
 						break;
