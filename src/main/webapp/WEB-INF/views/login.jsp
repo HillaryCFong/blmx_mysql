@@ -69,7 +69,12 @@
 	        </form>
 		</div>
 		<div class="container" id="message">
-			<%= session.getAttribute("error")%>
+			<%
+			    if(null!=request.getAttribute("error"))
+			    {
+			        out.println(request.getAttribute("error"));
+			    }
+			%>
 		</div>
 	</div>
 </body>
