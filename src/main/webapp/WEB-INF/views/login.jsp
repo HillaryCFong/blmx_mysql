@@ -61,6 +61,9 @@
 	            </div>
 	        </form>
 		</div>
+		<div class="container" id="message">
+			<%= session.getAttribute("error") %>
+		</div>
 	</div>
 </body>
 </html>

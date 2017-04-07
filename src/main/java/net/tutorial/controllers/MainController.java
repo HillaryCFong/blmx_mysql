@@ -124,26 +124,26 @@ public class MainController extends HttpServlet {
 				
 			
 				try {
-					if(accountManager.checkAccount(account)){
-						//	console.log("true");
+						if(accountManager.checkAccount(account)){
+							//	console.log("true");
+							
+						HttpSession session = req.getSession();
+						session.setAttribute("Valid", true);
+							
+						session.setAttribute("Email", email2);
 						
-					HttpSession session = req.getSession();
-					session.setAttribute("Valid", true);
-						
-					session.setAttribute("Email", email2);
-					
-					Cookie c = new Cookie("Email", email2);
-					c.setMaxAge(60*15);
-					resp.addCookie(c);
-						
-					dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/translate.jsp");
-	            	dispatcher.forward(req, resp);
+						Cookie c = new Cookie("Email", email2);
+						c.setMaxAge(60*15);
+						resp.addCookie(c);
+							
+						dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/translate.jsp");
+		            	dispatcher.forward(req, resp);
 					}
 					else {
 					//	req.getSession().setAttribute("Error", "Error");
-					
-					dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/login.jsp");
-					dispatcher.forward(req, resp);
+						req.setAttribute("error", "Invalid Username or Password.");
+						dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/login.jsp");
+						dispatcher.forward(req, resp);
 					}
 					
 				} catch (Exception e) {
