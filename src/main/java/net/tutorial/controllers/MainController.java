@@ -158,7 +158,8 @@ public class MainController extends HttpServlet {
 		
 			
 				/*Cookie[]*/ cookieList = req.getCookies();
-	
+	session.setAttribute("Valid", false);
+						
 				for(Cookie c: cookieList){
 					if(c.getName().equals("Email")){
 						c.setMaxAge(0);

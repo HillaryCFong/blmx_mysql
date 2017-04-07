@@ -9,7 +9,7 @@
 Cookie[] cookieList = request.getCookies();
 	AccountManager accountManager = new AccountManager();
 	boolean hasLoggedIn = false;
-	request.getSession().setAttribute("Valid", false);
+//	request.getSession().setAttribute("Valid", false);
 	
 	response.setHeader("Cache-Control","no-cache");
 	response.setHeader("Cache-Control","no-store");
@@ -18,7 +18,7 @@ Cookie[] cookieList = request.getCookies();
 	
 	if(cookieList != null) {
 		for(Cookie c: cookieList){
-			if(c.getName().equals("Email") && request.getSession().getAttribute("Email") != null){
+			if(request.getSession().getAttribute("Valid") != null && request.getSession().getAttribute("Email") != null){
 				hasLoggedIn = true;
 				c.setMaxAge(60*15);
 				response.addCookie(c);
