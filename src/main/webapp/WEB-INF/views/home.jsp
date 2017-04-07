@@ -18,7 +18,7 @@ Cookie[] cookieList = request.getCookies();
 	
 	if(cookieList != null) {
 		for(Cookie c: cookieList){
-			if(request.getSession().getAttribute("Valid") != null && request.getSession().getAttribute("Email") != null){
+			if(request.getSession().getAttribute("Email") != null){
 				hasLoggedIn = true;
 				c.setMaxAge(60*15);
 				response.addCookie(c);

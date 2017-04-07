@@ -158,7 +158,7 @@ public class MainController extends HttpServlet {
 		
 			
 				/*Cookie[]*/ cookieList = req.getCookies();
-	req.getSession().setAttribute("Valid", false);
+	req.getSession().clear();
 						
 				for(Cookie c: cookieList){
 					if(c.getName().equals("Email")){
@@ -167,7 +167,7 @@ public class MainController extends HttpServlet {
 						break;
 					}	
 				}
-					req.getSession().invalidate();
+				//	req.getSession().invalidate();
 				dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/login.jsp");
 				dispatcher.forward(req, resp);
 				break;
