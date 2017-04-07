@@ -72,7 +72,7 @@
 			<%
 			    if(session.getAttribute("error")!=null)
 			    {
-			        out.println(session.getAttribute("error"));
+			        session.getAttribute("error");
 			    }
 			%>
 		</div>
