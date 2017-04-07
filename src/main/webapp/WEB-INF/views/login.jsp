@@ -14,6 +14,13 @@
 	<!-- Stylesheet -->
 	<link rel="stylesheet" type="text/css"  href="css/styles0.css">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300" rel="stylesheet" type="text/css">
+	<style type="text/css"> 
+		#message {
+				color: white;
+				text-align: center;
+				margin: auto;
+			}
+	</style>
 	
 	
 </head>
