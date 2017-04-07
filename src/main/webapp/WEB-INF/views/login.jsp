@@ -70,7 +70,7 @@
 		</div>
 		<div class="container" id="message">
 			<%
-			    if(null!=session.getAttribute("error"))
+			    if(session.getAttribute("error")!=null)
 			    {
 			        out.println(session.getAttribute("error"));
 			    }
