@@ -158,7 +158,7 @@ public class MainController extends HttpServlet {
 		
 			
 				/*Cookie[]*/ cookieList = req.getCookies();
-	req.getSession().clear();
+	req.getSession().invalidate();
 						
 				for(Cookie c: cookieList){
 					if(c.getName().equals("Email")){
