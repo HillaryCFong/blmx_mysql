@@ -91,6 +91,7 @@ public class MainController extends HttpServlet {
 		String password = req.getParameter("password");
 		Integer number = Integer.parseInt(req.getParameter("number"));
 		String gender = req.getParameter("gender");
+		String str = null;
 
 		Map<String, Object> record = new HashMap<String, Object>();
 		DBService db = DBService.getInstance();
@@ -141,7 +142,8 @@ public class MainController extends HttpServlet {
 					}
 					else {
 					//	req.getSession().setAttribute("Error", "Error");
-						req.setAttribute("error", "Invalid Username or Password.");
+						str = "Invalid Username or Password.";
+						req.setAttribute("error", str);
 						dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/views/login.jsp");
 						dispatcher.forward(req, resp);
 					}
